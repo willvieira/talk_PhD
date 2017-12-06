@@ -18,12 +18,12 @@
 % tikz diagrams
 \usepackage{tikz}
 \usetikzlibrary{shapes,snakes}
-\usetikzlibrary{er,positioning}
+\usetikzlibrary{er}
 \usetikzlibrary{arrows, plotmarks, decorations.markings}
 \tikzstyle{arrow} = [->,>=stealth,thick,rounded corners=10pt,line width=0.1pt]
 \usetikzlibrary{shadows}
 \usetikzlibrary{shadings}
-\usetikzlibrary{tikzmark, calc} % calc, to calculate coordinate
+\usetikzlibrary{tikzmark, positioning, calc} % calc, to calculate coordinate
 \tikzstyle{State}=[circle,
 		thick,
 		minimum size = 0.8cm,
@@ -110,7 +110,7 @@
           minimum height=4cm,
           path picture={
               \node at (path picture bounding box.center){
-                  \includegraphics[width=4cm]{#1}
+                  \includegraphics[width=5cm]{#1}
               };
           }]{#2};
 }
@@ -128,8 +128,8 @@
 \end{picture}
 }
 
-\title{Lier l'écologie théorique et l'aménagement forestier}
-\subtitle{adaptation aux changement climatique}
+\title{Lier l'écologie théorique et \newline l'aménagement forestier}
+\subtitle{Adaptations aux changements climatiques}
 \date{\today}
 \author{\textbf{Willian Vieira}\\
 Superviseur: Dominique Gravel \& Robert Bradley \newline}
@@ -142,7 +142,7 @@ Superviseur: Dominique Gravel \& Robert Bradley \newline}
 \begin{frame}{Défi actuel}
 
 \centering
- \includegraphics[scale=0.55]{figures/Linoir.pdf}\par
+ \includegraphics[scale=0.55]{figures/Lenoir.pdf}\par
 
 \smallcitation{Linoir and Svenning 2014 Ecography}
 
@@ -157,10 +157,10 @@ Superviseur: Dominique Gravel \& Robert Bradley \newline}
 
 \end{frame}
 
-\begin{frame}{La forêt ne suit pas le changement climatique}
+\begin{frame}{La forêt ne suit pas les changements climatiques}
 
 \centering
- \includegraphics[scale=0.4]{figures/Vissault.pdf}\par
+ \includegraphics[scale=0.45]{figures/Vissault.pdf}\par
 
 \smallcitation{Vissault et al. submitted}
 
@@ -173,7 +173,6 @@ Superviseur: Dominique Gravel \& Robert Bradley \newline}
     \node<1> (img1) {\includegraphics[scale=0.85]{figures/niche1.pdf}};
     \node<2> (img2) {\includegraphics[scale=0.85]{figures/niche2.pdf}};
     \node<3> (img3) {\includegraphics[scale=0.85]{figures/niche3.pdf}};
-    \node<4> (img4) {\includegraphics[scale=0.85]{figures/niche4.pdf}};
   \end{tikzpicture}
 \end{center}
 
@@ -183,7 +182,7 @@ Superviseur: Dominique Gravel \& Robert Bradley \newline}
 
 \center{\huge{Aménagement forestier}}
 
-Aménagement X mécanismes biotiques
+Aménagement X mécanismes écologiques
 
 \end{frame}
 
@@ -205,21 +204,7 @@ coefficient de diffusion
 
 \end{frame}
 
-\begin{frame}{Cadre théorique - expansion des espèces}
-
-\begin{LARGE}
-  $$ 2 \times \sqrt{rD} $$
-\end{LARGE}
-
-\begin{itemize}
-  \item $$ r = r + E $$
-  \pause
-  \item $$ D = d + P $$
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Cadre théorique - interaction des espèces}
+\begin{frame}{Cadre théorique - interactions interspécifiques}
 
 \centering
  \includegraphics[scale=0.8]{figures/Svenning2014.png}\par
@@ -228,39 +213,30 @@ coefficient de diffusion
 
 \end{frame}
 
-\begin{frame}{Importance de l'échelle spatiale}
+\begin{frame}{Cadre théorique - Intégration de l'aménagement forestier}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Competition -\textgreater{} \textbf{Local}
-\item
-  Temperature -\textgreater{} \textbf{Régionale}
-\item
-  Ignore
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Local
-  \item
-    Local X régionale
-  \end{itemize}
-\end{enumerate}
+\centering
+ \input{figures/expansion.tex}\par
 
 \end{frame}
 
-\section{Peut l'aménagement forestier augmenter l'adaptabilité des la
-forêt au changement climatique
-?}\label{peut-lamuxe9nagement-forestier-augmenter-ladaptabilituxe9-des-la-foruxeat-au-changement-climatique}
+\section{Intégrer l'aménagement forestier sur les modèles théoriques
+pour mieux prédire la distribution des espèces dans un contexte de
+changements
+climatiques}\label{intuxe9grer-lamuxe9nagement-forestier-sur-les-moduxe8les-thuxe9oriques-pour-mieux-pruxe9dire-la-distribution-des-espuxe8ces-dans-un-contexte-de-changements-climatiques}
 
-\section{Quels mécanismes, à l'échelle locale et à grande échelle
-spatiale, déterminent la réponse de la forêt au changement climatique
-?}\label{quels-muxe9canismes-uxe0-luxe9chelle-locale-et-uxe0-grande-uxe9chelle-spatiale-duxe9terminent-la-ruxe9ponse-de-la-foruxeat-au-changement-climatique}
+\section{\texorpdfstring{L'aménagement forestier peut-il
+\newline augmenter l'adaptabilité de la forêts aux changements
+climatiques
+?}{L'aménagement forestier peut-il augmenter l'adaptabilité de la forêts aux changements climatiques ?}}\label{lamuxe9nagement-forestier-peut-il-augmenter-ladaptabilituxe9-de-la-foruxeats-aux-changements-climatiques}
 
-\section{Y a-t-il une interaction entre ces échelles spatiales
-?}\label{y-a-t-il-une-interaction-entre-ces-uxe9chelles-spatiales}
+\section{\texorpdfstring{Quels mécanismes, à l'échelle locale et
+régionale, déterminent la réponse de la forêt aux changements
+\newline climatiques
+?}{Quels mécanismes, à l'échelle locale et régionale, déterminent la réponse de la forêt aux changements climatiques ?}}\label{quels-muxe9canismes-uxe0-luxe9chelle-locale-et-ruxe9gionale-duxe9terminent-la-ruxe9ponse-de-la-foruxeat-aux-changements-climatiques}
+
+\section{Y a-t-il des interactions entre ces échelles spatiales
+?}\label{y-a-t-il-des-interactions-entre-ces-uxe9chelles-spatiales}
 
 \begin{frame}{Organisation des chapitres}
 
@@ -268,10 +244,10 @@ spatiale, déterminent la réponse de la forêt au changement climatique
 
 \end{frame}
 
-\section{\texorpdfstring{Chapitre I: \newline Peut l'aménagement
-forestier augmenter l'adaptabilité des la forêt de l'est de l'Amérique
-du Nord au changement climatique
-?}{Chapitre I: Peut l'aménagement forestier augmenter l'adaptabilité des la forêt de l'est de l'Amérique du Nord au changement climatique ?}}\label{chapitre-i-peut-lamuxe9nagement-forestier-augmenter-ladaptabilituxe9-des-la-foruxeat-de-lest-de-lamuxe9rique-du-nord-au-changement-climatique}
+\section{\texorpdfstring{Chapitre I: \newline L'aménagement forestier
+peut-il \newline augmenter l'adaptabilité de la forêt de l'est de
+l'Amérique du Nord aux changements climatiques
+?}{Chapitre I: L'aménagement forestier peut-il augmenter l'adaptabilité de la forêt de l'est de l'Amérique du Nord aux changements climatiques ?}}\label{chapitre-i-lamuxe9nagement-forestier-peut-il-augmenter-ladaptabilituxe9-de-la-foruxeat-de-lest-de-lamuxe9rique-du-nord-aux-changements-climatiques}
 
 \begin{frame}{Contexte}
 
@@ -279,16 +255,16 @@ du Nord au changement climatique
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Productivité, crash, extinction
+  Reduction de la productivité due aux changements climatiques
 \item
-  Capacité d'adaptation -\textgreater{} taux de migration
+  \(\uparrow\) Capacité d'adaptation = \(\uparrow\) taux de migration
 \item
-  Migration X aménagement forestier
+  Effet de l'aménagement forestier sur la migration
 \end{enumerate}
 
 \end{frame}
 
-\begin{frame}{Objective}
+\begin{frame}{Objectif}
 
 \begin{center}
   \begin{tikzpicture}
@@ -303,20 +279,23 @@ du Nord au changement climatique
 
 \begin{frame}{Modèle}
 
-\centering
- \input{figures/model.tex}\par
+\begincols
+\column{0.48\textwidth} \input{figures/model.tex}
+\hfill\column{0.35\textwidth}
 
 \begin{description}
 \tightlist
 \item[B]
-Boréal
+Boréale
 \item[M]
 Mixte
 \item[T]
-Tempéré
+Tempérée
 \item[R]
 Régeneration
 \end{description}
+
+\stopcols
 
 \end{frame}
 
@@ -336,16 +315,16 @@ Régeneration
 
 \begin{frame}{Résultats préliminaires}
 
-Effet de la plantation et coupe
+Effet de la \textbf{plantation} et de la \textbf{coupe}
 
 \centering
- \includegraphics[scale=0.65]{figures/result}\par
+ \includegraphics[scale=0.65]{figures/result0.pdf}\par
 
 \end{frame}
 
 \begin{frame}{Résultats préliminaires}
 
-Effet de l'éclaircie
+Effet de l'\textbf{éclaircie}
 
 \centering
  \includegraphics[scale=0.65]{figures/result1.pdf}\par
@@ -353,41 +332,86 @@ Effet de l'éclaircie
 \end{frame}
 
 \section{\texorpdfstring{Chapitre II et III: \newline Quels mécanismes,
-à l'échelle locale et régionalle, déterminent la réponse des forêts ?
-\newline Chapitre IV: \newline Quelle interaction entre les échelles
-?}{Chapitre II et III: Quels mécanismes, à l'échelle locale et régionalle, déterminent la réponse des forêts ? Chapitre IV: Quelle interaction entre les échelles ?}}\label{chapitre-ii-et-iii-quels-muxe9canismes-uxe0-luxe9chelle-locale-et-ruxe9gionalle-duxe9terminent-la-ruxe9ponse-des-foruxeats-chapitre-iv-quelle-interaction-entre-les-uxe9chelles}
+à l'échelle locale et régionale, déterminent la réponse des forêts ?
+\newline Chapitre IV: \newline Y a-t-il des interactions entre ces
+échelles spatiales
+?}{Chapitre II et III: Quels mécanismes, à l'échelle locale et régionale, déterminent la réponse des forêts ? Chapitre IV: Y a-t-il des interactions entre ces échelles spatiales ?}}\label{chapitre-ii-et-iii-quels-muxe9canismes-uxe0-luxe9chelle-locale-et-ruxe9gionale-duxe9terminent-la-ruxe9ponse-des-foruxeats-chapitre-iv-y-a-t-il-des-interactions-entre-ces-uxe9chelles-spatiales}
 
-\begin{frame}{Besoin d'un modèle à l'échelle locale}
+\begin{frame}{Dynamiques forestières à différentes échelles spatiales}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Modèles en paysage
-\item
-  Modèles de structure de population
-\item
-  Effect du climat et de l'aménagement forestier
-\end{enumerate}
+\begin{columns}[T]
+  \column{6.5cm}
+    1. Locale
 
-\end{frame}
+    \centering
+      \includegraphics[scale=0.338]{figures/gap}\par
+  \column{6.5cm}
+    2. Régionale
 
-\begin{frame}{Consideration explicite des interaction biotiques}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Interaction à l'échelle local
-\item
-  Interaction à l'échelle régionale ?
-\end{enumerate}
+    \centering
+      \includegraphics[scale=0.08]{figures/fire}\par
+\end{columns}
 
 \end{frame}
 
-\begin{frame}{Approche continue}
+\begin{frame}{Aménagement forestier à différentes échelles spatiales}
 
-\centering\huge{IPM}
+Éclaircie
+
+\centering
+ \includegraphics[scale=0.338]{figures/thinning}\par
+
+\end{frame}
+
+\begin{frame}{Aménagement forestier à différentes échelles spatiales}
+
+Plan de gestion
+
+\centering
+ \includegraphics[scale=0.28]{figures/planGestion}\par
+
+\end{frame}
+
+\begin{frame}{Importance des interactions entre échelles spatiales}
+
+\begincols
+\column{0.40\textwidth} Différents processus à différentes échelles
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      locale -> interactions biotiques
+    \item
+      Régionale -> effets du climat
+  \end{enumerate}
+
+\hfill\column{0.55\textwidth} \centering
+ \includegraphics[scale=0.35]{figures/scaleInteg.pdf}\par
+\stopcols
+\smallcitation{Schurr et al. 2012 J. Biogeogr.}
+
+\end{frame}
+
+\begin{frame}{Modèle structuré à l'échelle locale}
+
+\begincols
+\column{0.18\textwidth}
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      Survie
+    \item
+      Croissance
+    \item
+      Reproduction
+  \end{enumerate}
+
+\hfill\column{0.55\textwidth} \centering
+ \includegraphics[scale=0.50]{figures/IPM}\par
+\stopcols
 
 \end{frame}
 
@@ -395,12 +419,11 @@ Effet de l'éclaircie
 
 \centering
  \input{figures/diagr_integ.tex}\par
-
-\smallcitation{Talluto et al. 2016 Global Ecol \& Biog}
+\smallcitation{Talluto et al. 2016 Glob. Ecol. Biogeogr.}
 
 \end{frame}
 
-\section{Conclusions}\label{conclusions}
+\section{Conclusion}\label{conclusion}
 
 \begin{frame}{Contribution du projet}
 
@@ -408,11 +431,12 @@ Effet de l'éclaircie
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Prediction d'aire de répartition
+  Prediction plus précise des aires de répartition
 \item
-  Compreetion de l'effet de l'aménagement forestier
+  Meilleure compréhension des processus écologiques X aménagement
+  forestier
 \item
-  Integration des échelles
+  Intégration des échelles spatiales
 \end{enumerate}
 
 \end{frame}
