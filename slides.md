@@ -1,6 +1,6 @@
 ---
-title: Lier l'écologie théorique et l'aménagement forestier
-subtitle: adaptation aux changement climatique
+title: Lier l'écologie théorique et \newline l'aménagement forestier
+subtitle: Adaptation aux changement climatique
 author: |
   | \textbf{Willian Vieira}
   | Superviseur: Dominique Gravel & Robert Bradley \newline
@@ -33,7 +33,6 @@ language: francais
     \node<1> (img1) {\includegraphics[scale=0.85]{figures/niche1.pdf}};
     \node<2> (img2) {\includegraphics[scale=0.85]{figures/niche2.pdf}};
     \node<3> (img3) {\includegraphics[scale=0.85]{figures/niche3.pdf}};
-    \node<4> (img4) {\includegraphics[scale=0.85]{figures/niche4.pdf}};
   \end{tikzpicture}
 \end{center}
 
@@ -56,34 +55,21 @@ $$ 2 \times \sqrt{rD} $$
 
 \smallcitation{Fisher 1937 Ann. Eugenics, Skellam 1951 Biometrika}
 
-## Cadre théorique - expansion des espèces
-\begin{LARGE}
-  $$ 2 \times \sqrt{rD} $$
-\end{LARGE}
-
-\begin{itemize}
-  \item $$ r = r + E $$
-  \pause
-  \item $$ D = d + P $$
-\end{itemize}
-
 ## Cadre théorique - interaction des espèces
 \centering
   \includegraphics[scale=0.8]{figures/Svenning2014.png}\par
 
 \smallcitation{Svenning et al. 2014 Ecography}
 
-## Importance de l'échelle spatiale
+## Cadre théorique - Intégration de l'aménagement forestier
+\centering
+  \input{figures/expansion.tex}\par
 
-1. Competition -> **Local**
-2. Temperature -> **Régionale**
-3. Ignore
-    - Local
-    - Local X régionale
+# Intégrér l'aménagement forestier sur les modèles théoriques pour mieux prédire la distribution des espèces sous le changement climatique
 
-# Peut l'aménagement forestier augmenter l'adaptabilité des la forêt au changement climatique ?
+# Peut l'aménagement forestier \newline augmenter l'adaptabilité des la forêt au changement climatique ?
 
-# Quels mécanismes, à l'échelle locale et à grande échelle spatiale, déterminent la réponse de la forêt au changement climatique ?
+# Quels mécanismes, à l'échelle locale et régionale, déterminent la réponse de la forêt au changement \newline climatique ?
 
 # Y a-t-il une interaction entre ces échelles spatiales ?
 <!-- c-t-d: comment les processus tels que les interactions locales atteignent-ils le niveau régional et affectent la distribution spatial des espèces? -->
@@ -94,12 +80,12 @@ $$ 2 \times \sqrt{rD} $$
 
 \input{figures/flow_fr.tex}
 
-# Chapitre   I: \newline Peut l'aménagement forestier augmenter l'adaptabilité des la forêt de l'est de l'Amérique du Nord au changement climatique ?
+# Chapitre   I: \newline Peut l'aménagement forestier \newline augmenter l'adaptabilité des la forêt de l'est de l'Amérique du Nord au changement climatique ?
 
 ## Contexte
-1. Productivité, crash, extinction
-2. Capacité d’adaptation -> taux de migration
-3. Migration X aménagement forestier
+1. Reduction de la productivité due le changement climatique
+2. $\uparrow$ Capacité d’adaptation = $\uparrow$ taux de migration
+3. Effet de l'aménagement forestier sur la migration
 
 ## Objective
 \begin{center}
@@ -112,20 +98,26 @@ $$ 2 \times \sqrt{rD} $$
 \end{center}
 
 ## Modèle
-\centering
-  \input{figures/model.tex}\par
+\begincols
+\column{0.48\textwidth}
 
-B
-: Boréal
+  \input{figures/model.tex}
 
-M
-: Mixte
+\hfill\column{0.35\textwidth}
 
-T
-: Tempéré
+  B
+  : Boréal
 
-R
-: Régeneration
+  M
+  : Mixte
+
+  T
+  : Tempéré
+
+  R
+  : Régeneration
+
+\stopcols
 
 ## Intégration avec l'aménagement forestier
 \centering
@@ -136,43 +128,102 @@ R
   \includegraphics[scale=0.65]{figures/migration.pdf}\par
 
 ## Résultats préliminaires
-Effet de la plantation et coupe
+Effet de la **plantation** et **coupe**
 
 \centering
-  \includegraphics[scale=0.65]{figures/result}\par
+  \includegraphics[scale=0.65]{figures/result0.pdf}\par
 
 ## Résultats préliminaires
-Effet de l'éclaircie
+Effet de l'**éclaircie**
 
 \centering
   \includegraphics[scale=0.65]{figures/result1.pdf}\par
 
-# Chapitre II et III: \newline Quels mécanismes, à l'échelle locale et régionalle, déterminent la réponse des forêts ? \newline Chapitre IV: \newline Quelle interaction entre les échelles ?
+# Chapitre II et III: \newline Quels mécanismes, à l'échelle locale et régionale, déterminent la réponse des forêts ? \newline Chapitre IV: \newline Quelle interaction entre les échelles ?
 
-## Besoin d’un modèle à l’échelle locale
-1. Modèles en paysage
-2. Modèles de structure de population
-3. Effect du climat et de l’aménagement forestier
+## Dynamique forestier à différents échelles spatiales
 
-## Consideration explicite des interaction biotiques
-1. Interaction à l’échelle local
-2. Interaction à l’échelle régionale ?
+\begin{columns}[T]
 
-## Approche continue
-\centering\huge{IPM}
+  \column{6.5cm}
+    1. Locale
+
+    \centering
+      \includegraphics[scale=0.338]{figures/gap}\par
+
+  \column{6.5cm}
+    2. Régionale
+
+    \centering
+      \includegraphics[scale=0.08]{figures/fire}\par
+
+\end{columns}
+
+## Aménagement forestier à différents échelles spatiales
+Éclaircie
+
+\centering
+  \includegraphics[scale=0.338]{figures/thinning}\par
+
+## Aménagement forestier à différents échelles spatiales
+Plan de gestion
+
+\centering
+  \includegraphics[scale=0.28]{figures/planGestion}\par
+
+## Importance de l'interaction entre échelles spatiales
+\begincols
+\column{0.40\textwidth}
+Différents processus à différents échelles
+
+  \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      locale -> interactions biotiques
+    \item
+      Régionale -> effet du climat
+  \end{enumerate}
+
+\hfill\column{0.55\textwidth}
+    \centering
+      \includegraphics[scale=0.35]{figures/scaleInteg.pdf}\par
+\stopcols
+
+\smallcitation{Schurr et al. 2012 J. Biogeogr.}
+
+## Modèle structurée à l'échelle locale
+\begincols
+\column{0.18\textwidth}
+  \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      Survie
+    \item
+      Croissance
+    \item
+      Reproduction
+  \end{enumerate}
+
+\hfill\column{0.55\textwidth}
+    \centering
+      \includegraphics[scale=0.50]{figures/IPM}\par
+
+\stopcols
 
 ## Approche hiérarchique
 \centering
   \input{figures/diagr_integ.tex}\par
 
-\smallcitation{Talluto et al. 2016 Global Ecol \& Biog}
+\smallcitation{Talluto et al. 2016 Glob. Ecol. Biogeogr.}
 
 # Conclusions
 
 ## Contribution du projet
-1. Prediction d'aire de répartition
-2. Compreetion de l'effet de l'aménagement  forestier
-3. Integration des échelles
+1. Prediction plus précise des aires de répartition
+2. Mieux compreension processus ecologique X aménagement forestier
+3. Integration des échelles spatiales
 
 ## {.plain}
 
