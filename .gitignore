@@ -1,5 +1,6 @@
 _minted*/
 slides.pdf
+*.pptx
 *.aux
 *.log
 *.nav

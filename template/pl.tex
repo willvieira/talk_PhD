@@ -18,12 +18,12 @@
 % tikz diagrams
 \usepackage{tikz}
 \usetikzlibrary{shapes,snakes}
-\usetikzlibrary{er,positioning}
+\usetikzlibrary{er}
 \usetikzlibrary{arrows, plotmarks, decorations.markings}
 \tikzstyle{arrow} = [->,>=stealth,thick,rounded corners=10pt,line width=0.1pt]
 \usetikzlibrary{shadows}
 \usetikzlibrary{shadings}
-\usetikzlibrary{tikzmark, calc} % calc, to calculate coordinate
+\usetikzlibrary{tikzmark, positioning, calc} % calc, to calculate coordinate
 \tikzstyle{State}=[circle,
 		thick,
 		minimum size = 0.8cm,
@@ -110,7 +110,7 @@
           minimum height=4cm,
           path picture={
               \node at (path picture bounding box.center){
-                  \includegraphics[width=4cm]{#1}
+                  \includegraphics[width=5cm]{#1}
               };
           }]{#2};
 }

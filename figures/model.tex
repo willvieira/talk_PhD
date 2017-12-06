@@ -1,0 +1,26 @@
+	\begin{tikzpicture}[->,>=stealth',auto,scale=0.45]
+		\node [circle,State] (M) at (0,0) {\textcolor{white}{M}};
+		\node [circle,State] (B) at (-8,5) {\textcolor{white}{B}};
+		\node [circle,State] (T) at (8,5) {\textcolor{white}{T}};
+		\node [circle,State] (R) at (0,10) {\textcolor{white}{R}};
+
+		\path	(M) edge [thick,loop below,-latex]  node {} (M);
+		\path	(T) edge [thick,loop right,-latex]  node {} (T);
+		\path	(B) edge [thick,loop left,-latex]  node {} (B);
+		\path	(R) edge [thick,loop above,-latex]  node {} (R);
+
+		\draw[thick,-latex] (M) to node[above,sloped] {} (B);
+		\draw[thick,-latex] (B) to[bend right=25] node[below,sloped] {} (M);
+
+		\draw[thick,-latex] (T) to[bend left=25] node[below,sloped] {Colonisation} (M);
+		\draw[thick,-latex] (M) to node[above,sloped] {Exclusion compétitive} (T);
+
+		\draw[thick,-latex] (R) to[bend left=25] node[above,sloped] {Succession} (T);
+		\draw[thick,-latex] (T) to node[below,sloped] {Pertubation} (R);
+
+		\draw[thick,-latex] (R) to[bend right=25] node[above,sloped] {} (B);
+		\draw[thick,-latex] (B) to node[below,sloped] {} (R);
+
+		\draw[thick,-latex,transform canvas={xshift=0.8ex}] (R) to node[above,sloped] {} (M);
+		\draw[thick,-latex,transform canvas={xshift=-0.8ex}] (M) to node[above,sloped] {} (R);
+	\end{tikzpicture}
