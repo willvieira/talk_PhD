@@ -117,7 +117,7 @@ dat <- data.frame(x, dnorm(x))
   #plot 2
   plot(prob$X1, prob$X2, xaxt = "n", type = "l", lwd = 1.75, lty = 2, ylim = c(0, 0.14), ylab = "Probabilité de transition", xlab = "")
   legend(0.2, 0.14, c("Boréale -> Mixte"), lty = 2, bty = "n", cex = 0.9)
-  mtext("Augmentation de l'aménagement forestier", side = 1, line = -1.5, outer = TRUE, cex = 1.1)
+  mtext("Intensité de l'aménagement forestier", side = 1, line = -1.5, outer = TRUE, cex = 1.1)
 
   #Close window
   dev.off()
@@ -141,7 +141,7 @@ dat <- data.frame(x, dnorm(x))
   #plot 2
   plot(prob$X1, prob$X2, xaxt = "n", type = "l", lwd = 1.75, lty = 2, ylim = c(0, 0.14), ylab = "Probabilité de transition", xlab = "")
   legend(0.2, 0.14, c("Boréale -> Mixte"), lty = 2, bty = "n", cex = 0.9)
-  mtext("Augmentation de l'aménagement forestier", side = 1, line = -1.5, outer = TRUE, cex = 1.1)
+  mtext("Intensité de l'aménagement forestier", side = 1, line = -1.5, outer = TRUE, cex = 1.1)
 
   #Close window
   dev.off()
