@@ -14,7 +14,7 @@
   linFunc <- function(x, b) x*b + 2
 
   #plot
-  pdf("/Users/wvieira/GitHub/talk_seminarI/figures/managMechanism.pdf", width = 8.5, height = 2.2)
+  pdf("figures/managMechanism.pdf", width = 8.5, height = 2.2)
   par(mfrow = c(1, 4), mar = c(2.25, 1.7, 2, 1.5))
 
   #Plantation
@@ -59,18 +59,18 @@ x <- seq(-3, 3, length = 100)
 dat <- data.frame(x, dnorm(x))
 
   # plot 1
-  pdf("/Users/wvieira/GitHub/talk_seminarI/figures/niche1.pdf", width = 4, height = 3)
-  par(mar = c(2.2, 2.2, 2, 0.5))
-  plot(dat, type = "l", col = cg, axes = FALSE, lwd = 2, xlim = c(-3, 5), xlab = "", ylab = "", xaxt = "n", yaxt = "n")
+  pdf("figures/niche1.pdf", width = 4, height = 3)
+  par(xaxs="i", yaxs="i", mar = c(2.2, 2.2, 2, 0.5))
+  plot(dat, type = "l", col = cg, axes = FALSE, lwd = 2, ylim = c(0.004, 0.41), xlim = c(-3, 5), xlab = "", ylab = "", xaxt = "n", yaxt = "n")
   axis(1, at = c(-8, 8), lwd = 1.7)
   axis(2, at = c(-8, 8), lwd = 1.7)
   mtext("Position", 1, cex = 1, line = 0.8)
   mtext(TeX('Aptitude$\\propto productivité$'), 2, cex = 1, line = 0.8)
   dev.off()
   # plot 2
-  pdf("/Users/wvieira/GitHub/talk_seminarI/figures/niche2.pdf", width = 4, height = 3)
+  pdf("figures/niche2.pdf", width = 4, height = 3)
   par(xaxs="i", yaxs="i", mar = c(2.2, 2.2, 2, 0.5))
-  plot(dat, type = "l", col = cg, axes = FALSE, lwd = 2, xlim = c(-3, 5), xlab = "", ylab = "", xaxt = "n", yaxt = "n")
+  plot(dat, type = "l", col = cg, axes = FALSE, lwd = 2, ylim = c(0.004, 0.41), xlim = c(-3, 5), xlab = "", ylab = "", xaxt = "n", yaxt = "n")
   lines(dat$x + 2.2, dat$dnorm.x., col = "orange", lwd = 2)
   axis(1, at = c(-8, 8), lwd = 1.7)
   axis(2, at = c(-8, 8), lwd = 1.7)
@@ -80,9 +80,9 @@ dat <- data.frame(x, dnorm(x))
   mtext("Changements climatiques", side = 3, line = 0.75, cex = 0.8)
   dev.off()
   # plot 3
-  pdf("/Users/wvieira/GitHub/talk_seminarI/figures/niche3.pdf", width = 4, height = 3)
+  pdf("figures/niche3.pdf", width = 4, height = 3)
   par(xaxs="i", yaxs="i", mar = c(2.2, 2.2, 2, 0.5))
-  plot(x, dnorm(x), type = "l", col = cg, axes = FALSE, lwd = 2, xlim = c(-3, 5), xlab = "", ylab = "", xaxt = "n", yaxt = "n")
+  plot(x, dnorm(x), type = "l", col = cg, axes = FALSE, lwd = 2, ylim = c(0.004, 0.41), xlim = c(-3, 5), xlab = "", ylab = "", xaxt = "n", yaxt = "n")
   axis(1, at = c(-8, 8), lwd = 1.7)
   axis(2, at = c(-8, 8), lwd = 1.7)
   mtext("Position", 1, cex = 1, line = 0.8)
@@ -103,7 +103,7 @@ dat <- data.frame(x, dnorm(x))
   egv <- x[[1]] # occupancy
   prob <- x[[2]] # transition probability
 
-  pdf("/Users/wvieira/GitHub/talk_seminarI/figures/result0.pdf", width = 8.1, height = 3)
+  pdf("figures/result0.pdf", width = 8.1, height = 3)
   par(mfrow = c(1, 2), mar = c(2, 3, 0.5, 0.5), mgp = c(1.5, 0.3, 0), tck = -.008)
 
   #plot 1
@@ -127,7 +127,7 @@ dat <- data.frame(x, dnorm(x))
   egv <- x[[1]] # occupancy
   prob <- x[[2]] # transition probability
 
-  pdf("/Users/wvieira/GitHub/talk_seminarI/figures/result1.pdf", width = 8.1, height = 3)
+  pdf("figures/result1.pdf", width = 8.1, height = 3)
   par(mfrow = c(1, 2), mar = c(2, 3, 0.5, 0.5), mgp = c(1.5, 0.3, 0), tck = -.008)
 
   #plot 1

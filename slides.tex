@@ -128,7 +128,8 @@
 \end{picture}
 }
 
-\title{Lier l'écologie théorique et \newline l'aménagement forestier}
+\title{Effet de l'aménagement forestier sur la distribution et productivité des
+forêts du Québec}
 \subtitle{Adaptations aux changements climatiques}
 \date{\today}
 \author{\textbf{Willian Vieira}\\
@@ -139,7 +140,8 @@ Superviseurs: Dominique Gravel \& Robert Bradley \newline}
 
 \maketitle
 
-\begin{frame}{Défi actuel - Distribution future attendue}
+\begin{frame}{Défi actuel - Distribution future attendue face aux
+changement climatique}
 
 \centering
  \includegraphics[scale=0.4]{figures/mckenney.pdf}\par
@@ -248,12 +250,6 @@ régionale, déterminent la réponse de la forêt aux changements
 \section{Y a-t-il des interactions entre ces échelles spatiales
 ?}\label{y-a-t-il-des-interactions-entre-ces-uxe9chelles-spatiales}
 
-\begin{frame}{Organisation des chapitres}
-
-\input{figures/flow_fr.tex}
-
-\end{frame}
-
 \section{\texorpdfstring{Chapitre I: \newline L'aménagement forestier
 peut-il \newline augmenter l'adaptabilité de la forêt de l'est de
 l'Amérique du Nord aux changements climatiques
@@ -272,7 +268,7 @@ l'Amérique du Nord aux changements climatiques
 
 \end{frame}
 
-\begin{frame}{Modèle}
+\begin{frame}{Modèle de transition d'état}
 
 \begincols
 \column{0.48\textwidth} \input{figures/model.tex}
@@ -292,12 +288,23 @@ Régeneration
 
 \stopcols
 
+\smallcitation{Vissault et al. submitted}
+
 \end{frame}
 
 \begin{frame}{Intégration avec l'aménagement forestier}
 
 \centering
  \includegraphics[scale=0.65]{figures/managMechanism.pdf}\par
+
+\end{frame}
+
+\begin{frame}{Simulations}
+
+\begincols
+\column{0.48\textwidth}
+\includegraphics[scale=0.50]{figures/migration0.pdf}
+\hfill\column{1\textwidth} \input{figures/model.tex} \stopcols
 
 \end{frame}
 
@@ -354,10 +361,127 @@ Plan de gestion
 
 \end{frame}
 
-\section{\texorpdfstring{Chapitre II et III: \newline Quels mécanismes,
-à l'échelle locale et régionale, déterminent la réponse des forêts aux
-changements climatiques
-?}{Chapitre II et III: Quels mécanismes, à l'échelle locale et régionale, déterminent la réponse des forêts aux changements climatiques ?}}\label{chapitre-ii-et-iii-quels-muxe9canismes-uxe0-luxe9chelle-locale-et-ruxe9gionale-duxe9terminent-la-ruxe9ponse-des-foruxeats-aux-changements-climatiques}
+\section{\texorpdfstring{Chapitre II et III: \newline Interaction entre
+l'aménagement forestier, la competition et le changement climatique sur
+le taux de croissance des
+arbres}{Chapitre II et III: Interaction entre l'aménagement forestier, la competition et le changement climatique sur le taux de croissance des arbres}}\label{chapitre-ii-et-iii-interaction-entre-lamuxe9nagement-forestier-la-competition-et-le-changement-climatique-sur-le-taux-de-croissance-des-arbres}
+
+\begin{frame}{Importance de la démographie à l'échelle locale}
+
+\centering
+ \includegraphics[scale=0.32]{figures/Griffith2016.png}\par
+
+\smallcitation{Griffith et al. 2016 J. Ecology}
+
+\end{frame}
+
+\begin{frame}{Modèle structuré à l'échelle locale}
+
+\begincols
+\column{0.18\textwidth}
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      Survie
+    \item
+      Croissance
+    \item
+      Reproduction
+  \end{enumerate}
+
+\hfill\column{0.55\textwidth} \stopcols
+
+\end{frame}
+
+\begin{frame}{Modèle structuré à l'échelle locale}
+
+\begincols
+\column{0.18\textwidth}
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      Survie
+    \item
+      Croissance
+    \item
+      Reproduction
+  \end{enumerate}
+
+\hfill\column{0.55\textwidth}
+
+\begin{align*}
+    n(t + 1) = \textbf{A}\, n(t)
+  \end{align*}
+
+\[
+  \textbf{A} =
+  \begin{bmatrix}
+    x_{11}       & x_{12} & x_{13} & \dots & x_{1n} \\
+    x_{21}       & x_{22} & x_{23} & \dots & x_{2n} \\
+    x_{31}       & x_{32} & x_{33} & \dots & x_{3n} \\
+    \hdotsfor{5} \\
+    x_{d1}       & x_{d2} & x_{d3} & \dots & x_{dn}
+\end{bmatrix}
+  \] \stopcols
+
+\end{frame}
+
+\begin{frame}{Integral projection models (IPM)}
+
+\begincols
+\column{0.48\textwidth}
+
+\begin{align*}
+    n(z', t + 1) = \int_{\Omega} \, k(z', z)\, n(z, t)\, \mathrm{d}x
+  \end{align*}
+
+\begin{align*}
+    k(z', z) = \underbrace{P(z', z)}_\text{Survie/croissance} + \,\, \underbrace{F(z', z)}_\text{Fecundité}
+  \end{align*}
+
+\hfill\column{0.55\textwidth}
+
+\begin{description}
+\tightlist
+\item[z']
+taile à temps \textit{t} + 1
+\item[z]
+taile à temps \textit{t}
+\end{description}
+
+\stopcols
+
+\end{frame}
+
+\begin{frame}{Integral projection models (IPM) - croissance}
+
+\begin{align*}
+  P(z', z) = \underbrace{s(z', z)}_\text{Survie} \,\times \, \underbrace{g(z', z)}_\text{croissance}
+\end{align*}
+
+\centering
+ \includegraphics[scale=0.40]{figures/Merow2014a.png}\par
+
+\smallcitation{Merow et al. 2014 Methods Ecol Evol.}
+
+\end{frame}
+
+\begin{frame}{workflow des IPM}
+
+\centering
+ \includegraphics[scale=0.325]{figures/Merow2014.png}\par
+
+\smallcitation{Merow et al. 2014 Methods Ecol Evol.}
+
+\end{frame}
+
+\section{Chapitre IV: Y a-t-il des interactions entre l'échelle locale
+et régionale
+?}\label{chapitre-iv-y-a-t-il-des-interactions-entre-luxe9chelle-locale-et-ruxe9gionale}
 
 \begin{frame}{Importance des interactions entre échelles spatiales}
 
@@ -380,29 +504,27 @@ changements climatiques
 
 \end{frame}
 
-\section{Chapitre IV: Y a-t-il des interactions entre ces échelles
-spatiales
-?}\label{chapitre-iv-y-a-t-il-des-interactions-entre-ces-uxe9chelles-spatiales}
-
-\begin{frame}{Modèle structuré à l'échelle locale}
+\begin{frame}{Modèle en continue}
 
 \begincols
-\column{0.18\textwidth}
+\column{0.48\textwidth} \input{figures/model.tex}
+\hfill\column{0.35\textwidth}
 
-\begin{enumerate}
-    \def\labelenumi{\arabic{enumi}.}
-    \tightlist
-    \item
-      Survie
-    \item
-      Croissance
-    \item
-      Reproduction
-  \end{enumerate}
+\begin{description}
+\tightlist
+\item[B]
+Boréale
+\item[M]
+Mixte
+\item[T]
+Tempérée
+\item[R]
+Régeneration
+\end{description}
 
-\hfill\column{0.55\textwidth} \centering
- \includegraphics[scale=0.50]{figures/IPM}\par
 \stopcols
+
+\smallcitation{Vissault et al. submitted}
 
 \end{frame}
 
@@ -416,16 +538,15 @@ spatiales
 
 \section{Conclusion}\label{conclusion}
 
-\begin{frame}{Contribution du projet}
+\begin{frame}{Contributions possibles du projet}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Meilleure compréhension des processus écologiques X aménagement
-  forestier
+  Processus écologiques X aménagement forestier X changement climatique
 \item
-  Intégration des échelles spatiales
+  Intégration des processus à différentes échelles spatiales
 \item
   Prédiction plus précise des aires de répartition et productivité
   forestier

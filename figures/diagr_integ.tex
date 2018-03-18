@@ -2,16 +2,16 @@
     \begin{tikzpicture}[thick,every text node part/.style={align=center}]
 
     % --- model 1 node
-    \node[draw, ellipse] (model1) at (10, 10) {\textbf{Modèle 1} \\ \footnotesize{locale}};
+    \node[draw, ellipse] (model1) at (10, 10) {\textbf{Modèle 1} \\ \footnotesize{IPM locale}};
     % --- model 2 node
-    \node[draw, ellipse] (model2) at (10, 7.5) {\textbf{Modèle 2} \newline \\ \footnotesize{régionale}};
-    \draw[thick,->] (model1) -- (model2) node[midway,sloped,left,rotate=90] {Information à priori};
+    \node[draw, ellipse] (model2) at (10, 7.5) {\textbf{Modèle 2} \newline \\ \footnotesize{IPM régionale}};
+    \draw[thick,->] (model1) -- (model2) node[midway,sloped,left,rotate=90] {$r_{pop}$ (prior)};
 
     % --- Structure
-    \node[text width=6cm] (struc) at (10,11.5) {Population structurée};
+    \node[text width=6cm] (struc) at (10,11.5) {Survie, croissance, reproduction};
     \draw [->] (struc) edge (model1);
     % --- Distribution des espèces
-    \node[text width=5cm] (dist) at (10,6) {Distribution des espèces};
+    \node[text width=5cm] (dist) at (10,6) {Distribution et productivité forestier};
     \draw [->] (model2) edge (dist);
 
   \end{tikzpicture}

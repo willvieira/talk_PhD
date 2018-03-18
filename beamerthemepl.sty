@@ -75,7 +75,7 @@
               {\usebeamerfont{title}\inserttitle\\[0.2cm]}
               {\usebeamerfont{subtitle}\insertsubtitle\\[0.9cm]}
               \vfill
-              {\usebeamerfont{author}\insertauthor \hfil \usebeamerfont{institute}\insertinstitute\par}
+              {\usebeamerfont{author}\insertauthor \\ \usebeamerfont{institute}\insertinstitute\par}
               {\usebeamerfont{date}\insertdate}
       \end{minipage}
   }
@@ -191,7 +191,7 @@
         \put(-28.5,-175){\tikz \fill [plBG] (1,1) rectangle (13,12);}%
         \put(0,-145){%
           \begin{minipage}[b][4.5cm][t]{0.5\textwidth}
-            {\small\color{plFG!50!plBG}\MakeUppercase{\sffamily§ \thesection}}\\[0.2pt]\color{plST}\Large\mdseries\insertsectionHEAD
+            \color{plST}\Large\mdseries\insertsectionHEAD
           \end{minipage}
         }
       \end{picture}
