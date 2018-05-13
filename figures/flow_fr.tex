@@ -1,30 +1,29 @@
+\vspace*{-15mm}
 \begin{center}
+  \hspace*{-12mm}
   \begin{tikzpicture}[thick,every text node part/.style={align=center}]
 
     % --------------------------------------------------------- %
     % ------------- principal node (question)
     % --------------------------------------------------------- %
-    \node[text width=12cm] (question) at (10,10.25) {\textbf{\large Intégrer l'aménagement forestier et les modèles théoriques afin de \newline \large mieux prédire la distribution et la productivité des espèces}};
+    \node[text width=15cm] (question) at (10,10.25) {\textbf{\large Intégrer l'aménagement forestier et les interactions entre espèces au sein des modèles théoriques afin de mieux prédire la distribution et la productivité des espèces}};
 
     % --------------------------------------------------------- %
     % ------------ Objectives
     % --------------------------------------------------------- %
+    % --- Obj0 node
+    \node[text width=12cm,visible on=<2->] (obj0) at (10,8.75) {L'aménagement forestier peut-il augmenter le taux de migration de la forêt vers le nord ?};
+    \draw [->,visible on=<2->] (question) edge [out=270, in=90] (obj0);
     % --- Obj1 node
-    \node[text width=10cm] (obj1) at (10,8.75) {Chap 1: adaptation X aménagement forestier};
-    \draw [->] (question) edge [out=270, in=90] (obj1);
+    \node[text width=12cm,visible on=<3->] (obj1) at (10,7.25) {La stochasticité environnementale et démographique reste important quand on regarde sont effet à large echelles ?};
+    \draw [->,visible on=<3->] (obj0) edge [out=270, in=90] (obj1);
     % --- Obj2 node
-    \node[text width=7cm] (obj2) at (6.5,7) {Chap 2: \\ processus écologique x aménagement \\ à l'échelle \textbf{locale}};
-    \draw [->] (obj1) edge [out=188, in=90] (obj2);
+    \node[text width=9cm,visible on=<4->] (obj2) at (6.5,5.25) {Quand et comment les interactions biotiques sont plus importantes que le climat pour définir la limite de l'aire de répartition ?};
+    \draw [->,visible on=<4->] (obj1) edge [out=195, in=90] (obj2);
     % --- Obj2 node
-    \node[text width=9cm] (obj3) at (13.5,7) {Chap 3: \\ processus écologique x aménagement \\ à l'échelle \textbf{régionale}};
-    \draw [->] (obj1) edge [out=353, in=90] (obj3);
+    \node[text width=8.25cm,visible on=<5->] (obj3) at (13.5,5.25) {Quand et comment l'aménagement forestier peut-il impacter la productivité et les limites d'aire de répartition ?};
+    \draw [->,visible on=<5->] (obj1) edge [out=345, in=90] (obj3);
     % --- Obj3 node
-    \node[text width=7cm] (obj4) at (10,5.25) {Chap 4: échelle locale X échelle régionale};
-    \draw [->] (obj2) edge [out=280, in=173] (obj4);
-    \draw [->] (obj3) edge [out=260, in=8] (obj4);
-    % --- Obj4 node
-    \node[text width=6cm] (concl) at (10,4.25) {Outil d'aide à la décision};
-    \draw [->] (obj4) edge [out=270, in=90] (concl);
 
   \end{tikzpicture}
 \end{center}

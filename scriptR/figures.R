@@ -6,6 +6,7 @@
   library(extrafont)
   library(latex2exp)
   loadfonts()
+  set.seed(42)
 
   #generate management data
   fm <- seq(0, 10, 0.05)
@@ -92,6 +93,37 @@ dat <- data.frame(x, dnorm(x))
   mtext("Changements climatiques", side = 3, line = 0.75, cex = 0.8)
   arrows(0, max(dat[2]), 0, 0.035, length = 0.15, angle = 30, lwd = 1.4, lty = 5)
   arrows(2.2, 0.035, 2.2, max(dat[2]), length = 0.15, angle = 30, lwd = 1.4, lty = 5)
+  dev.off()
+
+  #----------------------------------------------------------
+  #     Figure 2A - Niche theory
+  #----------------------------------------------------------
+
+  cg <- '#00796B'
+  x <- seq(-3, 3, length = 100)
+  dat <- data.frame(x, dnorm(x))
+
+  pdf("figures/niche2A.pdf", width = 4, height = 3)
+  par(xaxs="i", yaxs="i", mar = c(2.2, 2.2, 2, 0.5))
+  plot(dat, type = "l", col = cg, axes = FALSE, lwd = 3, xlim = c(-3, 5), ylim = c(0, 0.41), xlab = "", ylab = "", xaxt = "n", yaxt = "n")
+  lines(dat$x + 2.2, dat$dnorm.x., col = "orange", lwd = 3)
+  axis(1, at = c(-8, 8), lwd = 1.7)
+  axis(2, at = c(-8, 8), lwd = 1.7)
+  #mtext("Position", 1, cex = 1, line = 0.8)
+  #mtext(TeX('Aptitude$\\propto productivité$'), 2, cex = 1, line = 0.8)
+  #mtext(expression(symbol("\256")), side = 3, line = -1, cex = 2.5)
+  #mtext("Changements climatiques", side = 3, line = 0.75, cex = 0.8)
+  dev.off()
+
+  pdf("figures/niche1A.pdf", width = 4, height = 3)
+  par(xaxs="i", yaxs="i", mar = c(2.2, 2.2, 2, 0.5))
+  plot(dat$x + 2.2, dat$dnorm.x., col = "orange", type = "l", axes = FALSE, lwd = 3, xlim = c(-3, 5), ylim = c(0, 0.41), xlab = "", ylab = "", xaxt = "n", yaxt = "n")
+  axis(1, at = c(-8, 8), lwd = 1.7)
+  axis(2, at = c(-8, 8), lwd = 1.7)
+  #mtext("Position", 1, cex = 1, line = 0.8)
+  #mtext(TeX('Aptitude$\\propto productivité$'), 2, cex = 1, line = 0.8)
+  #mtext(expression(symbol("\256")), side = 3, line = -1, cex = 2.5)
+  #mtext("Changements climatiques", side = 3, line = 0.75, cex = 0.8)
   dev.off()
 
 #----------------------------------------------------------

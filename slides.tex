@@ -15,6 +15,23 @@
 }%
 \Langue{francais}
 
+%page number
+\newcommand{\pgnumber}[1]{%
+    \IfEqCase{#1}{%
+      {TRUE}{
+      \addtobeamertemplate{navigation symbols}{}{
+        \vspace{-4pt}
+        \usebeamercolor[fg]{footnote}
+        \usebeamerfont{footline}%
+          \insertframenumber \hspace*{6pt}}
+      }%
+      {FALSE}{\typeout{Page number mode off}}
+}%
+}%
+\pgnumber{TRUE}
+
+% emoticons
+\usepackage{tikzsymbols}
 % tikz diagrams
 \usepackage{tikz}
 \usetikzlibrary{shapes,snakes}
@@ -30,7 +47,14 @@
 		inner sep =5pt,
 		draw=plST,
 		fill=plST]
-
+% animated tikz (https://tex.stackexchange.com/a/136166)
+\tikzset{
+  invisible/.style={opacity=0},
+  visible on/.style={alt={#1{}{invisible}}},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+  },
+}
 \usepackage{verbatim}
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -128,36 +152,89 @@
 \end{picture}
 }
 
-\title{Lier l’aménagement forestier et \newline l’écologie théorique}
-\subtitle{Adaptations aux changements climatiques}
-\date{\today}
-\author{Willian Vieira \& Dominique Gravel \newline}
+\title{Effet de l’interaction entre espèces et de l’aménagement forestier sur
+la démographie des arbres}
+\subtitle{Conséquences sur la distribution et productivité de la forêt québécoise}
+\date{28 mars 2018}
+\author{\textbf{Willian Vieira}\\
+Superviseurs: Dominique Gravel \& Robert Bradley \newline}
 \institute{}
 
+%\includeonlyframes{current}
 \begin{document}
 
 \maketitle
 
-\begin{frame}{contexte}
-\protect\hypertarget{contexte}{}
+\begin{frame}{Défi actuel - Distribution future attendue face aux
+changements climatiques}
+\protect\hypertarget{duxe9fi-actuel---distribution-future-attendue-face-aux-changements-climatiques}{}
 
-\centering{\large{Distribution d'aire de répartition}}
+\begincols
+\column{0.4\textwidth}
+  \begin{itemize}
+  \tightlist
+  \item
+    Prediction de la distribution
+  \item
+    SDM = modèle climatique
+  \item
+    Manque de mécanismes ecologiques
+\end{itemize}
+\hfill\column{0.6\textwidth}
+  \centering
 
-\includegraphics[scale=0.65]{figures/migration0.pdf}
+\includegraphics[scale=0.4]{figures/mckenney.pdf}
+
+\par
+\stopcols
+
+\smallcitation{McKenney \textit{et al}. 2007 BioScience}
 
 \end{frame}
 
-\begin{frame}{contexte}
-\protect\hypertarget{contexte-1}{}
+\begin{frame}{Plusieurs processus ecologiques influencent l’assemblage
+de communité}
+\protect\hypertarget{plusieurs-processus-ecologiques-influencent-lassemblage-de-communituxe9}{}
 
-\centering{\large{Changement climatique}}
+\vspace*{-5mm}
+\centering
 
-\includegraphics[scale=0.65]{figures/migration.pdf}
+\includegraphics[scale=0.4]{figures/HilleRisLambers.png}
+
+\par
+
+\smallcitation{HilleRisLambers et al. 2012 Annu. Rev. Ecol. Evol. Syst}
 
 \end{frame}
 
-\begin{frame}{contexte}
-\protect\hypertarget{contexte-2}{}
+\begin{frame}{La forêt ne suit pas les changements climatiques}
+\protect\hypertarget{la-foruxeat-ne-suit-pas-les-changements-climatiques}{}
+
+\vspace*{-15mm}
+\begin{center}
+  \begin{tikzpicture}
+    \node<1> (img1) {\includegraphics[scale=0.45]{figures/Talluto0.png}};
+  \end{tikzpicture}
+\end{center}
+\smallcitation{Talluto \textit{et al}. 2017 Nat. Ecol. Evol.}
+
+\end{frame}
+
+\begin{frame}{Possibles conséquences}
+\protect\hypertarget{possibles-consuxe9quences}{}
+
+\vspace*{-15mm}
+\begin{center}
+  \begin{tikzpicture}
+    \node<1> (img1) {\includegraphics[scale=0.45]{figures/Talluto1.png}};
+    \node<2> (img2) {\includegraphics[scale=0.45]{figures/Talluto2.png}};
+  \end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Cadre théorique - expansion des espèces}
+\protect\hypertarget{cadre-thuxe9orique---expansion-des-espuxe8ces}{}
 
 \centering{\large{retard par rapport à la niche climatique}}
 
@@ -165,22 +242,120 @@
 
 \end{frame}
 
-\begin{frame}{contexte}
-\protect\hypertarget{contexte-3}{}
+\begin{frame}{Cadre théorique - expansion des espèces}
+\protect\hypertarget{cadre-thuxe9orique---expansion-des-espuxe8ces-1}{}
 
-\centering{\large{rattraper avec l'aménagement forestier}}
+\begincols
+\column{0.5\textwidth}
+\begin{Large}
+  \begin{gather*}
+    2 \times \sqrt{\alert{r}D} \\
+    r = \text{natalité} - \text{mortalité}
+  \end{gather*}
+\end{Large}
+
+\alert{Démographie} dépendante de l’environnement
+
+\begin{itemize}
+\tightlist
+\item
+  Dynamique de la population
+\end{itemize}
+
+\hfill\column{0.5\textwidth}
+  \centering
+
+\includegraphics[scale=0.43]{figures/croissance.png}
+
+\par
+\stopcols
+
+\end{frame}
+
+\begin{frame}{Cadre théorique - impact des interactions des espèces sur
+l’expansion des espèces}
+\protect\hypertarget{cadre-thuxe9orique---impact-des-interactions-des-espuxe8ces-sur-lexpansion-des-espuxe8ces}{}
+
+\centering
+
+\includegraphics[scale=0.48]{figures/Svenning2014.png}
+
+\par
+
+\smallcitation{Svenning et al. 2014 Ecography}
+
+\end{frame}
+
+\begin{frame}{Cadre théorique - climat et interactions des espèces sur
+l’aire de répartition}
+\protect\hypertarget{cadre-thuxe9orique---climat-et-interactions-des-espuxe8ces-sur-laire-de-ruxe9partition}{}
+
+\centering
+
+\includegraphics[scale=0.45]{figures/Pulliam2000.png}
+
+\par
+
+\smallcitation{Pulliam et al. 2000 Ecol. Lett.}
+
+\end{frame}
+
+\begin{frame}{Cadre théorique - Intégration de l’aménagement forestier}
+\protect\hypertarget{cadre-thuxe9orique---intuxe9gration-de-lamuxe9nagement-forestier}{}
+
+\begincols
+\hspace*{10mm}
+\column{0.2\textwidth}
+  \centering
+
+\includegraphics[scale=0.15]{figures/eclarcie.jpg}
+
+\par
+
+\hfill\column{0.4\textwidth}
+  \vspace*{-10mm}
+  \centering
+    \input{figures/expansion.tex}\par
+
+\hfill\column{0.4\textwidth}
+  \vspace*{6mm}
+    \centering
+
+\includegraphics[scale=0.15]{figures/plantation.jpg}
+
+\par
+\stopcols
+
+\end{frame}
+
+\begin{frame}{Objectifs}
+\protect\hypertarget{objectifs}{}
+
+\input{figures/flow_fr.tex}
+
+\end{frame}
+
+\hypertarget{pruxe9-chapitre-lamuxe9nagement-forestier-peut-il-augmenter-le-taux-de-migration-des-foruxeats-quuxe9buxe9coises-aux-changements-climatiques}{%
+\section{\texorpdfstring{Pré-chapitre: \newline L’aménagement forestier
+peut-il augmenter le taux de migration des forêts québécoises aux
+changements climatiques
+?}{Pré-chapitre: L’aménagement forestier peut-il augmenter le taux de migration des forêts québécoises aux changements climatiques ?}}\label{pruxe9-chapitre-lamuxe9nagement-forestier-peut-il-augmenter-le-taux-de-migration-des-foruxeats-quuxe9buxe9coises-aux-changements-climatiques}}
+
+\begin{frame}{Contexte - objectif}
+\protect\hypertarget{contexte---objectif}{}
 
 \includegraphics[scale=0.65]{figures/migration.pdf}
 
 \end{frame}
 
-\begin{frame}{Modèle}
-\protect\hypertarget{moduxe8le}{}
+\begin{frame}{Modèle de transition d’état}
+\protect\hypertarget{moduxe8le-de-transition-duxe9tat}{}
 
 \begincols
 \column{0.48\textwidth}
   \input{figures/model.tex}
 \hfill\column{0.35\textwidth}
+\vspace{-5mm}
 
 \begin{description}
 \tightlist
@@ -198,6 +373,37 @@ Régeneration
 
 \end{frame}
 
+\begin{frame}{Pratiques d’aménagement considérées dans le modèle}
+\protect\hypertarget{pratiques-damuxe9nagement-considuxe9ruxe9es-dans-le-moduxe8le}{}
+
+\begincols
+\column{0.28\textwidth}
+
+\textbf{Aménagement forestier}
+
+\begin{enumerate}
+
+    \tightlist
+    \item
+      Plantation
+    \item
+      Coupe
+    \item
+      Eclaircie
+    \item
+      Enrichissement
+  \end{enumerate}
+
+\hfill\column{0.55\textwidth}
+    \centering
+
+\includegraphics[scale=0.50]{figures/managPrac}
+
+\par
+\stopcols
+
+\end{frame}
+
 \begin{frame}{Intégration avec l’aménagement forestier}
 \protect\hypertarget{intuxe9gration-avec-lamuxe9nagement-forestier}{}
 
@@ -206,6 +412,17 @@ Régeneration
 \includegraphics[scale=0.65]{figures/managMechanism.pdf}
 
 \par
+
+\end{frame}
+
+\begin{frame}{Simulations}
+\protect\hypertarget{simulations}{}
+
+\begincols
+\column{0.3\textwidth}
+
+\includegraphics[scale=0.50]{figures/migration0.pdf}
+\hfill\column{0.7\textwidth} \input{figures/model.tex} \stopcols
 
 \end{frame}
 
@@ -225,7 +442,7 @@ Effet de la \textbf{plantation} et de la \textbf{coupe}
 \begin{frame}{Résultats préliminaires}
 \protect\hypertarget{ruxe9sultats-pruxe9liminaires-1}{}
 
-Effet de l’\textbf{éclaircie}
+Effet de l’\textbf{éclaircie} (coupe selective de conifères)
 
 \centering
 
@@ -235,36 +452,526 @@ Effet de l’\textbf{éclaircie}
 
 \end{frame}
 
-\begin{frame}{Importance des processus à l’échelle locale}
-\protect\hypertarget{importance-des-processus-uxe0-luxe9chelle-locale}{}
+\hypertarget{chapitre-i-le-moduxe8le-de-projection-intuxe9grale-ipm}{%
+\section{\texorpdfstring{Chapitre I: \newline Le modèle de projection
+intégrale
+(IPM)}{Chapitre I: Le modèle de projection intégrale (IPM)}}\label{chapitre-i-le-moduxe8le-de-projection-intuxe9grale-ipm}}
+
+\begin{frame}{Dynamiques forestières à différentes échelles spatiales}
+\protect\hypertarget{dynamiques-forestiuxe8res-uxe0-diffuxe9rentes-uxe9chelles-spatiales}{}
+
+\begin{columns}[T]
+  \column{6.5cm}
+    1. Locale
+
+    \centering
+      \includegraphics[scale=0.338]{figures/gap}\par
+  \column{6.5cm}
+    2. Régionale
+
+    \centering
+      \includegraphics[scale=0.08]{figures/fire}\par
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Aménagement forestier à différentes échelles spatiales}
+\protect\hypertarget{amuxe9nagement-forestier-uxe0-diffuxe9rentes-uxe9chelles-spatiales}{}
+
+Effet de l’\textbf{éclaircie}
 
 \centering
+
+\includegraphics[scale=0.338]{figures/thinning}
+
+\par
+
+\end{frame}
+
+\begin{frame}{Aménagement forestier à différentes échelles spatiales}
+\protect\hypertarget{amuxe9nagement-forestier-uxe0-diffuxe9rentes-uxe9chelles-spatiales-1}{}
+
+\vspace*{-7mm}
+
+Plan de gestion
+
+\centering
+
+\includegraphics[scale=0.28]{figures/planGestion}
+
+\par
+
+\end{frame}
+
+\begin{frame}{La démographie en tant que nœud central entre les
+différentes échelles}
+\protect\hypertarget{la-duxe9mographie-en-tant-que-nux153ud-central-entre-les-diffuxe9rentes-uxe9chelles}{}
+
+\vspace*{-5mm}
+
+Relier les taux vitaux aux dynamiques de population
+
+\centering
+
+\includegraphics[scale=0.65]{figures/Griffith2016.png}
+
+\par
 
 \includegraphics[scale=0.47]{figures/scaleInt.png}
 
 \par
 
-\smallcitation{Schurr \textit{et al}. 2012 \textit{J. Biogeogr.}}
-
-\end{frame}
-
-\begin{frame}{Importance des interactions entre échelles spatiales}
-\protect\hypertarget{importance-des-interactions-entre-uxe9chelles-spatiales}{}
+\begin{frame}{Objectifs}
+\protect\hypertarget{objectifs-1}{}
 
 \centering
 
-\includegraphics[scale=0.47]{figures/scaleInt1.png}
+Modèle de population structuré sous stochasticité
+\textbf{environnementale} et \textbf{démographique}
+
+\begin{itemize}
+\tightlist
+\item
+  Modèle flexible
+\item
+  Theoriques
+\item
+  Appliqués
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Modèle structuré à l’échelle locale}
+\protect\hypertarget{moduxe8le-structuruxe9-uxe0-luxe9chelle-locale}{}
+
+\begincols
+\column{0.18\textwidth}
+  \begin{itemize}
+    \item
+      {\color{plST}S}emence
+    \item
+      {\color{plST}J}uvénile
+    \item
+      {\color{plST}A}dulte
+  \end{itemize}
+
+\hfill\column{0.55\textwidth}
+  \centering
+
+\includegraphics[scale=0.65]{figures/cycle}
+
+\par
+\stopcols
+
+\end{frame}
+
+\begin{frame}{Integral projection models (IPM)}
+\protect\hypertarget{integral-projection-models-ipm}{}
+
+\begincols
+\column{0.5\textwidth}
+
+\begin{align*}
+    n(z', t + 1) = \int_{\Omega} \, \textbf{k(z', z)}\, n(z, t)\, \mathrm{d}x
+  \end{align*}
+
+\begin{align*}
+    k(z', z) = \underbrace{[s(z)}_\text{\alert{S}urvie}\times\underbrace{g(z', z)]}_\text{\alert{C}roissance} + \underbrace{F(z', z)}_\text{\alert{F}ecundité}
+  \end{align*}
+
+\hfill\column{0.6\textwidth}
+ \centering
+
+\includegraphics[scale=0.6]{figures/cycle_cont}
+
+\par
+\stopcols
+
+\end{frame}
+
+\begin{frame}{IPM - croissance}
+\protect\hypertarget{ipm---croissance}{}
+
+\vspace*{-13mm}
+\begin{align*}
+  \log(g_{ij}) &= a_{j} + b_{j}\log(z_{ij})
+\end{align*}
+
+\centering
+
+\includegraphics[scale=0.46]{figures/Merow2014a.png}
 
 \par
 
-\smallcitation{Schurr \textit{et al}. 2012 \textit{J. Biogeogr.}}
+\smallcitation{Merow et al. 2014 Methods Ecol. Evol.}
+
+\end{frame}
+
+\begin{frame}{IPM - construction attendue}
+\protect\hypertarget{ipm---construction-attendue}{}
+
+\input{figures/IPM_comp.tex}
+
+\end{frame}
+
+\begin{frame}{Résultats attendus - lien entre traits et taux vitaux}
+\protect\hypertarget{ruxe9sultats-attendus---lien-entre-traits-et-taux-vitaux}{}
+
+\centering
+
+\includegraphics[scale=0.55]{figures/output_chap1.png}
+
+\par
+
+\end{frame}
+
+\begin{frame}{Résultats attendus - lien entre traits et taux vitaux en
+fonction du climat}
+\protect\hypertarget{ruxe9sultats-attendus---lien-entre-traits-et-taux-vitaux-en-fonction-du-climat}{}
+
+\centering
+
+\includegraphics[scale=0.55]{figures/output_chap1a.png}
+
+\par
+
+\end{frame}
+
+\begin{frame}{Résultats attendus - lien entre traits et taux vitaux
+stochastique}
+\protect\hypertarget{ruxe9sultats-attendus---lien-entre-traits-et-taux-vitaux-stochastique}{}
+
+\centering
+
+\includegraphics[scale=0.55]{figures/output_chap1b.png}
+
+\par
+
+\end{frame}
+
+\hypertarget{chapitre-ii-effet-du-climat-et-des-interactions-biotiques-sur-la-dynamique-daire-de-ruxe9partition-des-espuxe8ces}{%
+\section{\texorpdfstring{Chapitre II: \newline Effet du climat et des
+interactions biotiques sur la dynamique d’aire de répartition des
+espèces}{Chapitre II: Effet du climat et des interactions biotiques sur la dynamique d’aire de répartition des espèces}}\label{chapitre-ii-effet-du-climat-et-des-interactions-biotiques-sur-la-dynamique-daire-de-ruxe9partition-des-espuxe8ces}}
+
+\begin{frame}{Dynamique au niveau de la population}
+\protect\hypertarget{dynamique-au-niveau-de-la-population}{}
+
+Des taux vitaux determinent l’air de répartition des espèces
+
+\centering
+
+\includegraphics[scale=0.685]{figures/Godsoe2017a.png}
+
+\par
+
+\smallcitation{Godsoe et al. 2017 Trends Ecol. Evol.}
+
+\end{frame}
+
+\begin{frame}{Dynamique au niveau de la communauté}
+\protect\hypertarget{dynamique-au-niveau-de-la-communautuxe9}{}
+
+Et l’interaction entre espéces determine-t-elle aussi l’air de
+répartition des espèces ?
+
+\centering
+
+\includegraphics[scale=0.685]{figures/Godsoe2017b.png}
+
+\par
+
+\smallcitation{Godsoe et al. 2017 Trends Ecol. Evo.}
+
+\end{frame}
+
+\begin{frame}{Objectifs}
+\protect\hypertarget{objectifs-2}{}
+
+\centering
+
+Tester si la formulation de \textbf{Godsoe} \emph{et al}. 2017 est
+applicable à un \textbf{système forestier}
+
+\begin{enumerate}
+[1.]
+\tightlist
+\item
+  Taux vitaux
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Interaction entre espèces
+  \item
+    Climat
+  \end{itemize}
+\item
+  Taux de croissance
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Objectifs - Résultats attendus}
+\protect\hypertarget{objectifs---ruxe9sultats-attendus}{}
+
+\centering
+
+\emph{Comment le taux de croissance et la force d’intraction entre
+espèces varient sur un gradient environnementale ?}
+
+\vspace*{10mm}
+\centering
+
+\includegraphics[scale=0.45]{figures/output_chap2a.png}
+
+\par
+
+\end{frame}
+
+\begin{frame}{Objectifs - Résultats attendus}
+\protect\hypertarget{objectifs---ruxe9sultats-attendus-1}{}
+
+\centering
+
+\emph{Quelle est la part relative des interactions biotiques et du le
+climat dans la définition de la limite de l’aire de répartition ?}
+
+\vspace*{10mm}
+\centering
+
+\includegraphics[scale=0.45]{figures/output_chap2b.png}
+
+\par
+
+\end{frame}
+
+\begin{frame}{Objectifs - Résultats attendus}
+\protect\hypertarget{objectifs---ruxe9sultats-attendus-2}{}
+
+\centering
+
+\emph{Les espèces les plus abondantes sont-elles aussi celles qui ont la
+plus grand force d’interaction ?}
+
+\vspace*{10mm}
+\centering
+
+\includegraphics[scale=0.5]{figures/output_chap2c.png}
+
+\par
+
+\end{frame}
+
+\hypertarget{chapitre-iii-effet-de-lamuxe9nagement-forestier-sur-le-taux-de-croissance-des-espuxe8ces-consuxe9quences-pour-la-productivituxe9}{%
+\section{\texorpdfstring{Chapitre III: \newline Effet de l’aménagement
+forestier sur le taux de croissance des espèces
+\newline \large Conséquences pour la
+productivité}{Chapitre III: Effet de l’aménagement forestier sur le taux de croissance des espèces Conséquences pour la productivité}}\label{chapitre-iii-effet-de-lamuxe9nagement-forestier-sur-le-taux-de-croissance-des-espuxe8ces-consuxe9quences-pour-la-productivituxe9}}
+
+\begin{frame}{Lien entre taux de croissance et productivité}
+\protect\hypertarget{lien-entre-taux-de-croissance-et-productivituxe9}{}
+
+\centering
+
+\includegraphics[scale=0.7]{figures/productivite.png}
+
+\par
+
+\end{frame}
+
+\begin{frame}{Effets de l’aménagement forestier}
+\protect\hypertarget{effets-de-lamuxe9nagement-forestier}{}
+
+\begincols
+\centering
+\column{0.5\textwidth}
+  \centering
+
+\includegraphics[scale=0.50]{figures/managPrac}
+
+\par
+\hfill\column{0.2\textwidth}
+  \begin{itemize}
+    \item
+      \vspace*{-8mm}
+      Colonisation
+    \item
+      \vspace*{11mm}
+      Pertubation
+    \item
+      \vspace*{11mm}
+      Coexistence
+    \item
+      \vspace*{11mm}
+      Competition
+  \end{itemize}
+\hfill\column{0.4\textwidth}
+  \vspace*{-15mm}
+
+\begin{gather*}
+  \text{Croissance} \times \text{Survie} = \alert{r}
+  \end{gather*} \stopcols
+
+\end{frame}
+
+\begin{frame}{Effets de l’aménagement forestier - Éclaircie}
+\protect\hypertarget{effets-de-lamuxe9nagement-forestier---uxe9claircie}{}
+
+\begincols
+\hspace*{20mm}
+\column{0.5\textwidth}
+
+\textbf{Positif}
+
+\begin{itemize}
+    \item
+      Disponibilité de la lumière
+    \item
+      Disponibilité en eau du soil
+    \item
+      Azote
+  \end{itemize}
+\hfill\column{0.5\textwidth}
+  \vspace*{-15mm}
+
+\textbf{Negatif}
+
+\begin{itemize}
+    \item
+      Habitat disponible
+    \item
+      Invasion d'ericacées
+  \end{itemize}
+\stopcols
+
+\end{frame}
+
+\begin{frame}{Objectifs}
+\protect\hypertarget{objectifs-3}{}
+
+\centering
+
+Tester si l’\textbf{aménagement forestier} peut avoir un impact sur le
+\textbf{taux de croissance} de la population et donc sur la
+\textbf{productivité} forestière.
+
+\begin{enumerate}
+[1.]
+\tightlist
+\item
+  Taux vitaux
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Interaction entre espèces
+  \item
+    Climat
+  \end{itemize}
+\item
+  Taux de croissance ou productivité
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Objectifs - Résultats attendus}
+\protect\hypertarget{objectifs---ruxe9sultats-attendus-3}{}
+
+\centering
+
+\emph{Comment les pratiques d’aménagement interagissent avec les taux
+vitaux de la population dans un contexte de changement climatique et
+d’interaction entre les espèces ?}
+
+\vspace*{10mm}
+\centering
+
+\includegraphics[scale=0.45]{figures/output_chap3a.png}
+
+\par
+
+\end{frame}
+
+\begin{frame}{Objectifs - Résultats attendus}
+\protect\hypertarget{objectifs---ruxe9sultats-attendus-4}{}
+
+\centering
+
+\emph{Quel est le taux vital le plus sensible aux pratiques
+d’aménagement ?} \newline \emph{Pour chaque taux vital, quel stade
+forestier de la population est le plus sensible aux pratiques
+d’aménegament ?}
+
+\vspace*{10mm}
+\centering
+
+\includegraphics[scale=0.45]{figures/output_chap3b.png}
+
+\par
+
+\end{frame}
+
+\begin{frame}{Objectifs - Résultats attendus}
+\protect\hypertarget{objectifs---ruxe9sultats-attendus-5}{}
+
+\centering
+
+\emph{Quelles sont les régions cibles pour l’aménagement forestier ?}
+
+\centering
+
+\includegraphics[scale=0.4]{figures/Talluto0.png}\hspace*{-4cm}
+
+\par
+
+\end{frame}
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+\begin{frame}{Contributions possibles du projet}
+\protect\hypertarget{contributions-possibles-du-projet}{}
+
+\begin{enumerate}
+[1.]
+\tightlist
+\item
+  \textbf{IPM}: modèle stochastique + approche par trait
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Vers une approche plus modulaire
+  \end{itemize}
+\item
+  Interaction \textbf{taux de croissance} locale X \textbf{dynamique
+  d’air de répartition} régionale
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Vers une approche integrative
+  \end{itemize}
+\item
+  Effet de l’\textbf{aménagement forestier} sur le \textbf{taux de
+  croissance}
+\end{enumerate}
 
 \end{frame}
 
 \begin{frame}[plain]{}
 \protect\hypertarget{section}{}
 
-\plain{Thank you! \newline Merci !}
+\plain{Obrigado! \newline
+
+\normalsize
+  Bill \bsc{Shipley} \newline
+  Daniel \bsc{Houle} \newline
+  Dominique \bsc{Arseneault} \newline
+  Dominique \bsc{Gravel} \newline
+  Robert L. \bsc{Bradley}
+}
 
 \end{frame}
 
