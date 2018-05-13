@@ -1,0 +1,19 @@
+\vspace*{-10mm}
+\begin{center}
+  \hspace*{-6mm}
+  \begin{tikzpicture}[thick,every text node part/.style={align=center}]
+
+    \node[text width=14.5cm] (n1) at (10,10.75) {IPM \textbf{déterministe} en fonction de la taille ($z'$, $z$)};
+
+    \node[text width=5.5cm,visible on=<2->] (n2) at (7,8.75) {IPM en fonction de la taille et de la stochasticité \textbf{climatique} };
+    \draw [->,visible on=<2->] (n1) edge [out=195, in=90] (n2);
+
+    \node[text width=5cm,visible on=<3->] (n3) at (13,8.75) {IPM en fonction de la stochasticité \textbf{démographique}};
+    \draw [->,visible on=<3->] (n1) edge [out=345, in=90] (n3);
+
+    \node[text width=7cm,visible on=<4->] (n4) at (10,6.75) {IPM paramétré en utilisant une approche basée sur les \textbf{trait}};
+    \draw [->,visible on=<4->] (n2) edge [out=270, in=165] (n4);
+    \draw [->,visible on=<4->] (n3) edge [out=270, in=15] (n4);
+
+  \end{tikzpicture}
+\end{center}
