@@ -8,7 +8,7 @@ all: $(OUTPUT)
 .PHONY: clean install
 
 rmd2md: $(wildcard $(FILE).Rmd)
-	@$(if $(wildcard $(FILE).Rmd),Rscript -e "library(knitr); knit(input='$<', output='$(SOURCE)')",echo "No Rmd file found")
+	@$(if $(wildcard $(FILE).Rmd),Rscript -e "library(knitr); knit(input='$<')",echo "No Rmd file found")
 
 jmd2md: $(wildcard $(FILE).Jmd)
 	@$(if $(wildcard $(FILE).Jmd),julia -e 'using Weave; weave("$<", doctype="pandoc")',echo "No Jmd file found")
@@ -30,4 +30,5 @@ clean:
 
 install:
 	mkdir -p $(INSTALL_DIR)
+	mkdir -p auxFiles
 	cp *.sty $(INSTALL_DIR)
