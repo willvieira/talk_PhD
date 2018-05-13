@@ -5,7 +5,7 @@ author: |
   | \textbf{Willian Vieira}
   | Superviseurs: Dominique Gravel & Robert Bradley \newline
 #institute: Université de Sherbrooke
-date: \today
+date: 28 mars 2018
 language: francais # Either "francais" or "english"
 pageNumber: "TRUE" # Either "TRUE" or "FALSE"
 ---
@@ -161,7 +161,7 @@ $$ 2 \times \sqrt{rD} $$
   **Aménagement forestier**
 
   \begin{enumerate}
-    \def\labelenumi{\arabic{enumi}.}
+
     \tightlist
     \item
       Plantation
