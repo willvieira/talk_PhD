@@ -59,12 +59,13 @@ pageNumber: "TRUE" # Either "TRUE" or "FALSE"
 $$ 2 \times \sqrt{rD} $$
 \end{LARGE}
 
-\includegraphics[scale=0.65]{figures/migration.pdf}
+  r
+  : taux de croissance de la population
 
-## contexte
-\centering{\large{retard par rapport à la niche climatique}}
+  D
+  : coefficient de diffusion
 
-\includegraphics[scale=0.65]{figures/migration1.pdf}
+\smallcitation{Skellam 1951 Biometrika}
 
 ## Cadre théorique - expansion des espèces
 \begincols
@@ -88,8 +89,6 @@ $$ 2 \times \sqrt{rD} $$
 ## Cadre théorique - impact des interactions des espèces sur l'expansion des espèces
 \centering
   \includegraphics[scale=0.48]{figures/Svenning2014.png}\par
-
-\includegraphics[scale=0.65]{figures/migration.pdf}
 
 ## Cadre théorique - climat et interactions des espèces sur l'aire de répartition
 \centering
@@ -229,7 +228,7 @@ Effet de l'**éclaircie** (coupe selective de conifères)
 Plan de gestion
 
 \centering
-  \includegraphics[scale=0.47]{figures/scaleInt.png}\par
+  \includegraphics[scale=0.28]{figures/planGestion}\par
 
 ## La démographie en tant que nœud central entre les différentes échelles
 \vspace*{-5mm}
@@ -285,7 +284,7 @@ Relier les taux vitaux aux dynamiques de population
 ## IPM - croissance
 \vspace*{-13mm}
 \begin{align*}
-  \log(g_{ij}) &= a_{j} + b_{j}\log(z_{ij})
+  \log(z'_{ij}) &= a_{j} + b_{j}\log(z_{ij})
 \end{align*}
 
 \centering

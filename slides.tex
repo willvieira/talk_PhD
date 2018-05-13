@@ -236,9 +236,19 @@ de communité}
 \begin{frame}{Cadre théorique - expansion des espèces}
 \protect\hypertarget{cadre-thuxe9orique---expansion-des-espuxe8ces}{}
 
-\centering{\large{retard par rapport à la niche climatique}}
+\begin{LARGE}
+$$ 2 \times \sqrt{rD} $$
+\end{LARGE}
 
-\includegraphics[scale=0.65]{figures/migration1.pdf}
+\begin{description}
+\tightlist
+\item[r]
+taux de croissance de la population
+\item[D]
+coefficient de diffusion
+\end{description}
+
+\smallcitation{Skellam 1951 Biometrika}
 
 \end{frame}
 
@@ -281,8 +291,6 @@ l’expansion des espèces}
 \includegraphics[scale=0.48]{figures/Svenning2014.png}
 
 \par
-
-\smallcitation{Svenning et al. 2014 Ecography}
 
 \end{frame}
 
@@ -344,7 +352,14 @@ changements climatiques
 \begin{frame}{Contexte - objectif}
 \protect\hypertarget{contexte---objectif}{}
 
-\includegraphics[scale=0.65]{figures/migration.pdf}
+\begin{center}
+  \begin{tikzpicture}
+    \node<1> (img1) {\includegraphics[scale=0.65]{figures/migration0.pdf}};
+    \node<2> (img2) {\includegraphics[scale=0.65]{figures/migration.pdf}};
+    \node<3> (img3) {\includegraphics[scale=0.65]{figures/migration1.pdf}};
+    \node<4> (img4) {\includegraphics[scale=0.65]{figures/migration.pdf}};
+  \end{tikzpicture}
+\end{center}
 
 \end{frame}
 
@@ -370,6 +385,8 @@ Régeneration
 \end{description}
 
 \stopcols
+
+\smallcitation{Vissault et al. submitted}
 
 \end{frame}
 
@@ -478,7 +495,7 @@ intégrale
 \begin{frame}{Aménagement forestier à différentes échelles spatiales}
 \protect\hypertarget{amuxe9nagement-forestier-uxe0-diffuxe9rentes-uxe9chelles-spatiales}{}
 
-Effet de l’\textbf{éclaircie}
+Éclaircie
 
 \centering
 
@@ -517,9 +534,9 @@ Relier les taux vitaux aux dynamiques de population
 
 \par
 
-\includegraphics[scale=0.47]{figures/scaleInt.png}
+\smallcitation{Griffith et al. 2016 J. Ecology}
 
-\par
+\end{frame}
 
 \begin{frame}{Objectifs}
 \protect\hypertarget{objectifs-1}{}
@@ -594,7 +611,7 @@ Modèle de population structuré sous stochasticité
 
 \vspace*{-13mm}
 \begin{align*}
-  \log(g_{ij}) &= a_{j} + b_{j}\log(z_{ij})
+  \log(z'_{ij}) &= a_{j} + b_{j}\log(z_{ij})
 \end{align*}
 
 \centering
