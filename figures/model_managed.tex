@@ -1,0 +1,39 @@
+\begin{tikzpicture}[->,>=stealth',auto,scale=0.45]
+  \node [circle,StateM] (M) at (0,0) {\textcolor{white}{M}};
+  \node [circle,StateB] (B) at (-7,5) {\textcolor{white}{B}};
+  \node [circle,StateT] (T) at (7,5) {\textcolor{white}{T}};
+  \node [circle,StateR] (R) at (0,10) {\textcolor{white}{R}};
+
+  \path	(M) edge [thick,loop below,-latex]  node {} (M);
+  \path	(T) edge [thick,loop right,-latex]  node {} (T);
+  \path	(B) edge [thick,loop left,-latex]  node {} (B);
+  \path	(R) edge [thick,loop above,-latex]  node {} (R);
+
+  % management nodes
+  \node [text width=2cm,align=center] (plant) at (6,10.5) {\textit{Plantation}};
+  \node [text width=2cm,align=center] (harv) at (-6.5,10.5) {\textit{Coupe}};
+  \node [text width=2cm,align=center] (thin) at (6,-0.5) {\textit{Coupe sélective}};
+  \node [text width=2cm,align=center] (enrich) at (-7,-0.5) {\textit{Enrichissement}};
+
+  \draw[thick,-latex] (M) to node[above,sloped] {} (B);
+  \draw[thick,-latex] (B) to[bend right=25] node[below,sloped] {Colonisation} (M);
+
+  \draw[thick,-latex] (T) to[bend left=25] node[below,sloped] {} (M);
+  \draw[thick,-latex] (M) to node[above,sloped] {Exclusion} (T);
+
+  \draw[thick,-latex] (R) to[bend left=25] node[above,sloped] {Succession} (T);
+  \draw[thick,-latex] (T) to node[below,sloped] {} (R);
+
+  \draw[thick,-latex] (R) to[bend right=25] node[above,sloped] {} (B);
+  \draw[thick,-latex] (B) to node[below,sloped] {Pertubation} (R);
+
+  \draw[thick,-latex,transform canvas={xshift=0.8ex}] (R) to node[above,sloped] {} (M);
+  \draw[thick,-latex,transform canvas={xshift=-0.8ex}] (M) to node[above,sloped] {} (R);
+
+  % add management arrows
+  \draw [gray,dashed,->] (plant) edge [out=290, in=0] (6,8.8);
+  \draw [gray,dashed,->] (harv) edge [out=270, in=150] (-4,7.4);
+  \draw [gray,dashed,->] (enrich) edge [out=95, in=220] (-6.4,1.5);
+  \draw [gray,dashed,->] (thin) edge [out=110, in=350] (3.5,2.1);
+
+\end{tikzpicture}

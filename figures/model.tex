@@ -1,8 +1,8 @@
 	\begin{tikzpicture}[->,>=stealth',auto,scale=0.45]
-		\node [circle,State] (M) at (0,0) {\textcolor{white}{M}};
-		\node [circle,State] (B) at (-8,5) {\textcolor{white}{B}};
-		\node [circle,State] (T) at (8,5) {\textcolor{white}{T}};
-		\node [circle,State] (R) at (0,10) {\textcolor{white}{R}};
+		\node [circle,StateM] (M) at (0,0) {\textcolor{white}{M}};
+		\node [circle,StateB] (B) at (-8,5) {\textcolor{white}{B}};
+		\node [circle,StateT] (T) at (8,5) {\textcolor{white}{T}};
+		\node [circle,StateR] (R) at (0,10) {\textcolor{white}{R}};
 
 		\path	(M) edge [thick,loop below,-latex]  node {} (M);
 		\path	(T) edge [thick,loop right,-latex]  node {} (T);

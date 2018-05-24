@@ -1,11 +1,10 @@
 ---
-title: Effet de l'interaction entre espèces et de l'aménagement forestier sur la démographie des arbres
-subtitle: Conséquences sur la distribution et productivité de la forêt québécoise
+title: Effet du climat, de l'interaction entre espèces et de l'aménagement forestier sur la dynamique des forêts du Québec
 author: |
   | \textbf{Willian Vieira}
   | Superviseurs: Dominique Gravel & Robert Bradley \newline
 #institute: Université de Sherbrooke
-date: 28 mars 2018
+date: \today
 language: francais # Either "francais" or "english"
 pageNumber: "TRUE" # Either "TRUE" or "FALSE"
 ---
@@ -28,13 +27,6 @@ pageNumber: "TRUE" # Either "TRUE" or "FALSE"
 \stopcols
 
 \smallcitation{McKenney \textit{et al}. 2007 BioScience}
-
-## Plusieurs processus ecologiques influencent l'assemblage de communité
-\vspace*{-5mm}
-\centering
-  \includegraphics[scale=0.4]{figures/HilleRisLambers.png}\par
-
-\smallcitation{HilleRisLambers et al. 2012 Annu. Rev. Ecol. Evol. Syst}
 
 ## La forêt ne suit pas les changements climatiques
 \vspace*{-15mm}
@@ -79,8 +71,6 @@ $$ 2 \times \sqrt{rD} $$
 
 \alert{Démographie} dépendante de l'environnement
 
-- Dynamique de la population
-
 \hfill\column{0.5\textwidth}
   \centering
     \includegraphics[scale=0.43]{figures/croissance.png}\par
@@ -98,18 +88,17 @@ $$ 2 \times \sqrt{rD} $$
 
 ## Cadre théorique - Intégration de l'aménagement forestier
 \begincols
-\hspace*{10mm}
-\column{0.2\textwidth}
+\column{0.18\textwidth}
+  \vspace*{4.5mm}
+  \hspace{10mm}
   \centering
     \includegraphics[scale=0.15]{figures/eclarcie.jpg}\par
 
 \hfill\column{0.4\textwidth}
-  \vspace*{-10mm}
   \centering
     \input{figures/expansion.tex}\par
 
 \hfill\column{0.4\textwidth}
-  \vspace*{6mm}
     \centering
       \includegraphics[scale=0.15]{figures/plantation.jpg}\par
 \stopcols
@@ -117,36 +106,35 @@ $$ 2 \times \sqrt{rD} $$
 ## Objectifs
 \input{figures/flow_fr.tex}
 
-# Pré-chapitre: \newline L'aménagement forestier peut-il augmenter le taux de migration des forêts québécoises aux changements climatiques ?
+# Chapitre I: \newline Impact de l'aménagement forestier sur le taux de migration des forêts de l'Amérique du Nord
 
 ## Contexte - objectif
 \begin{center}
   \begin{tikzpicture}
-    \node<1> (img1) {\includegraphics[scale=0.65]{figures/migration0.pdf}};
-    \node<2> (img2) {\includegraphics[scale=0.65]{figures/migration.pdf}};
-    \node<3> (img3) {\includegraphics[scale=0.65]{figures/migration1.pdf}};
-    \node<4> (img4) {\includegraphics[scale=0.65]{figures/migration.pdf}};
+    \node<1> (img1) {\includegraphics[scale=0.65]{figures/migration0.png}};
+    \node<2> (img2) {\includegraphics[scale=0.65]{figures/migration.png}};
+    \node<3> (img3) {\includegraphics[scale=0.65]{figures/migration1.png}};
+    \node<4> (img4) {\includegraphics[scale=0.65]{figures/migration.png}};
   \end{tikzpicture}
 \end{center}
 
 ## Modèle de transition d'état
 \begincols
-\column{0.48\textwidth}
+\column{0.58\textwidth}
   \input{figures/model.tex}
-\hfill\column{0.35\textwidth}
+\hfill\column{0.25\textwidth}
 \vspace{-5mm}
 
-  B
-  : Boréale
-
-  M
-  : Mixte
-
-  T
-  : Tempérée
-
-  R
-  : Régeneration
+\begin{itemize}
+    \item
+      \textbf{\textcolor{cB}{B}}oréale
+    \item
+      \textbf{\textcolor{cM}{M}}ixte
+    \item
+      \textbf{\textcolor{cT}{T}}empérée
+    \item
+    \textbf{\textcolor{cR}{R}}égeneration
+  \end{itemize}
 
 \stopcols
 
@@ -166,7 +154,7 @@ $$ 2 \times \sqrt{rD} $$
     \item
       Coupe
     \item
-      Eclaircie
+      Coupe sélective
     \item
       Enrichissement
   \end{enumerate}
@@ -180,28 +168,44 @@ $$ 2 \times \sqrt{rD} $$
 \centering
   \includegraphics[scale=0.65]{figures/managMechanism.pdf}\par
 
-## Simulations
+## Intégration avec l'aménagement forestier
+\centering
+\input{figures/model_managed.tex}\par
+
+## Analyse analytique
 
 \begincols
-\column{0.3\textwidth}
-  \includegraphics[scale=0.50]{figures/migration0.pdf}
-\hfill\column{0.7\textwidth}
-  \input{figures/model.tex}
+\column{0.4\textwidth}
+  \includegraphics[scale=0.50]{figures/migration0.png}
+\hfill\column{0.5\textwidth}
+  \includegraphics[scale=0.55]{figures/analyticalAnalysis}
 \stopcols
 
-## Résultats préliminaires
-Effet de la **plantation** et de la **coupe**
+## Analyse par simulations
+\begincols
+\column{0.4\textwidth}
+  \includegraphics[scale=0.50]{figures/migration0.png}
+\hfill\column{0.5\textwidth}
+  \includegraphics[scale=0.32]{figures/initLand}\par
+\stopcols
+
+## Résultats préliminaires - analytique
+Effet de l'aménagement forestier sur le **temps pour arriver à l'equilibre**
 
 \centering
-  \includegraphics[scale=0.65]{figures/result0.pdf}\par
+  \includegraphics[scale=0.55]{figures/resultTRE.pdf}\par
 
-## Résultats préliminaires
-Effet de l'**éclaircie** (coupe selective de conifères)
-
+## Résultats préliminaires - simulations
+\vspace*{-6mm}
 \centering
-  \includegraphics[scale=0.65]{figures/result1.pdf}\par
+  \includegraphics[scale=0.65]{figures/resultSim0.pdf}\par
 
-# Chapitre I: \newline Le modèle de projection intégrale (IPM)
+## Résultats préliminaires - simulations
+\vspace*{-6mm}
+\centering
+  \includegraphics[scale=0.65]{figures/resultSim.pdf}\par
+
+# Chapitre II: \newline Le modèle de projection intégrale (IPM) \newline \large L'effet du climat et de l'interaction entre espèces sur la démographie des arbres
 
 ## Dynamiques forestières à différentes échelles spatiales
 \begin{columns}[T]
@@ -218,7 +222,7 @@ Effet de l'**éclaircie** (coupe selective de conifères)
 \end{columns}
 
 ## Aménagement forestier à différentes échelles spatiales
-Éclaircie
+Coupe sélective
 
 \centering
   \includegraphics[scale=0.338]{figures/thinning}\par
@@ -241,11 +245,12 @@ Relier les taux vitaux aux dynamiques de population
 
 ## Objectifs
 \centering
-  Modèle de population structuré sous stochasticité **environnementale** et **démographique**
+  Modèle de population structuré (IPM)
 
+- Climat
+- Intéraction entre espèces
 - Modèle flexible
-- Theoriques
-- Appliqués
+- Questions theoriques et appliqués
 
 ## Modèle structuré à l'échelle locale
 \begincols
@@ -273,7 +278,7 @@ Relier les taux vitaux aux dynamiques de population
   \end{align*}
 
 \begin{align*}
-    k(z', z) = \underbrace{[s(z)}_\text{\alert{S}urvie}\times\underbrace{g(z', z)]}_\text{\alert{C}roissance} + \underbrace{F(z', z)}_\text{\alert{F}ecundité}
+    k(z', z) = \underbrace{[s(z)}_\text{Survie}\times\underbrace{g(z', z)]}_\text{Croissance} + \underbrace{F(z', z)}_\text{Fecundité}
   \end{align*}
 
 \hfill\column{0.6\textwidth}
@@ -281,33 +286,10 @@ Relier les taux vitaux aux dynamiques de population
  \includegraphics[scale=0.6]{figures/cycle_cont}\par
 \stopcols
 
-## IPM - croissance
-\vspace*{-13mm}
-\begin{align*}
-  \log(z'_{ij}) &= a_{j} + b_{j}\log(z_{ij})
-\end{align*}
-
-\centering
-  \includegraphics[scale=0.46]{figures/Merow2014a.png}\par
-
-\smallcitation{Merow et al. 2014 Methods Ecol. Evol.}
-
 ## IPM - construction attendue
 \input{figures/IPM_comp.tex}
 
-## Résultats attendus - lien entre traits et taux vitaux
-\centering
-  \includegraphics[scale=0.55]{figures/output_chap1.png}\par
-
-## Résultats attendus - lien entre traits et taux vitaux en fonction du climat
-\centering
-  \includegraphics[scale=0.55]{figures/output_chap1a.png}\par
-
-## Résultats attendus - lien entre traits et taux vitaux stochastique
-\centering
-  \includegraphics[scale=0.55]{figures/output_chap1b.png}\par
-
-# Chapitre II: \newline Effet du climat et des interactions biotiques sur la dynamique d'aire de répartition des espèces
+# Chapitre III: \newline Effet du climat et des interactions biotiques sur la dynamique d'aire de répartition des espèces
 
 ## Dynamique au niveau de la population
 Des taux vitaux determinent l'air de répartition des espèces
@@ -327,21 +309,18 @@ Et l'interaction entre espéces determine-t-elle aussi l'air de répartition des
 
 ## Objectifs
 \centering
-  Tester si la formulation de **Godsoe** *et al*. 2017 est applicable à un **système forestier**
+  Tester l'effet du **climat** et de l'**interaction entre spèces** sur le taux de croissance, et comment ces effets locaux évoluent à l'échelle régionale ?
 <!--Applicate this information with the advances in coexistence theory with process-based modeling may provide flexible tools to study how local dynamics scale up to regional and biogeographical scale -->
 
 1. Taux vitaux
     - Interaction entre espèces
     - Climat
-2. Taux de croissance
 
 ## Objectifs - Résultats attendus
 \centering
-  *Comment le taux de croissance et la force d'intraction entre espèces varient sur un gradient environnementale ?*
+  Comment le taux de croissance et la force d'intraction entre espèces varient sur un gradient environnementale ?
 
-\vspace*{10mm}
-\centering
-  \includegraphics[scale=0.45]{figures/output_chap2a.png}\par
+\vspace*{10mm} \centering \includegraphics[scale=0.45]{figures/output_chap2a.png}\par
 
 ## Objectifs - Résultats attendus
 \centering
@@ -351,19 +330,7 @@ Et l'interaction entre espéces determine-t-elle aussi l'air de répartition des
 \centering
   \includegraphics[scale=0.45]{figures/output_chap2b.png}\par
 
-## Objectifs - Résultats attendus
-\centering
-  *Les espèces les plus abondantes sont-elles aussi celles qui ont la plus grand force d'interaction ?*
-
-\vspace*{10mm}
-\centering
-  \includegraphics[scale=0.5]{figures/output_chap2c.png}\par
-
-# Chapitre III: \newline Effet de l'aménagement forestier sur le taux de croissance des espèces \newline \large Conséquences pour la productivité
-
-## Lien entre taux de croissance et productivité
-\centering
-  \includegraphics[scale=0.7]{figures/productivite.png}\par
+# Chapitre IV: \newline Effet de l'aménagement forestier sur le taux de croissance des espèces \newline \large Conséquences pour la productivité
 
 ## Effets de l'aménagement forestier
 \begincols
@@ -394,7 +361,7 @@ Et l'interaction entre espéces determine-t-elle aussi l'air de répartition des
   \end{gather*}
 \stopcols
 
-## Effets de l'aménagement forestier - Éclaircie
+## Effets de l'aménagement forestier - Coupe sélective
 \begincols
 \hspace*{20mm}
 \column{0.5\textwidth}
@@ -408,8 +375,7 @@ Et l'interaction entre espéces determine-t-elle aussi l'air de répartition des
       Azote
   \end{itemize}
 \hfill\column{0.5\textwidth}
-  \vspace*{-15mm}
-
+  \vspace*{-10mm}
   \textbf{Negatif}
   \begin{itemize}
     \item
@@ -421,12 +387,11 @@ Et l'interaction entre espéces determine-t-elle aussi l'air de répartition des
 
 ## Objectifs
 \centering
-  Tester si l'**aménagement forestier** peut avoir un impact sur le **taux de croissance** de la population et donc sur la **productivité** forestière.
+  Tester l'impact de l'**aménagement forestier** sur le **taux de croissance** des arbres et la rélation entre le taux de croissance et la **productivité** forestier
 
 1. Taux vitaux
     - Interaction entre espèces
     - Climat
-2. Taux de croissance ou productivité
 
 ## Objectifs - Résultats attendus
 \centering
@@ -438,15 +403,6 @@ Et l'interaction entre espéces determine-t-elle aussi l'air de répartition des
 
 ## Objectifs - Résultats attendus
 \centering
-  *Quel est le taux vital le plus sensible aux pratiques d'aménagement ?* \newline
-  *Pour chaque taux vital, quel stade forestier de la population est le plus sensible aux pratiques d'aménegament ?*
-
-\vspace*{10mm}
-\centering
-  \includegraphics[scale=0.45]{figures/output_chap3b.png}\par
-
-## Objectifs - Résultats attendus
-\centering
   *Quelles sont les régions cibles pour l'aménagement forestier ?*
 
 \centering
@@ -455,21 +411,16 @@ Et l'interaction entre espéces determine-t-elle aussi l'air de répartition des
 # Conclusion
 
 ## Contributions possibles du projet
-1. **IPM**: modèle stochastique + approche par trait
+
+1. Potential de l'aménagement forestier à une échelle réginale
+
+2. **IPM**: approche par trait
     - Vers une approche plus modulaire
 
-2. Interaction **taux de croissance** locale X **dynamique d'air de répartition** régionale
+3. Interaction **taux de croissance** locale X **dynamique d'air de répartition** régionale
     - Vers une approche integrative
 
-3. Effet de l'**aménagement forestier** sur le **taux de croissance**
+4. Effet de l'**aménagement forestier** sur le **taux de croissance**
 
 ## {.plain}
-\plain{Obrigado! \newline
-
-\normalsize
-  Bill \bsc{Shipley} \newline
-  Daniel \bsc{Houle} \newline
-  Dominique \bsc{Arseneault} \newline
-  Dominique \bsc{Gravel} \newline
-  Robert L. \bsc{Bradley}
-}
+\plain{Obrigado!}

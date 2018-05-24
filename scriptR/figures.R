@@ -25,13 +25,13 @@
   brackets(10.2, -5.5, 10.2, 1.8, ticks = 0.5, curvature = 0.5, type = 1, lwd = 1, lty = 1)
   mtext(side = 1, "Processus naturel", line = - 1.7, at = 4.8, cex = 0.85)
   mtext(side = 1, "Plantation", line = 0.8, cex = 1)
-  mtext(side = 2, "Colonisation", line = 0.3, cex = 1)
+  mtext(side = 2, "Succession", line = 0.3, cex = 1)
 
   #Thinning
   b = 2
   plot(fm, linFunc(fm, b), ylim = c(-4, 32), type = "l", lwd = 3, xaxt = "n", yaxt = "n", xlab = "", ylab = "", bty='l')
   abline(1.8,0, lty = 3)
-  mtext(side = 1, "Éclaircie", line = 0.8, cex = 1)
+  mtext(side = 1, "Coupe sélective", line = 0.8, cex = 1)
   mtext(side = 2, "Exclusion compétitive", line = 0.3, cex = 1)
 
   #Enrichment
@@ -39,7 +39,7 @@
   plot(fm, linFunc(fm, b), ylim = c(-4, 32), type = "l", lwd = 3, xaxt = "n", yaxt = "n", xlab = "", ylab = "", bty='l')
   abline(1.8,0, lty = 3)
   mtext(side = 1, "Enrichissement", line = 0.8, cex = 1)
-  mtext(side = 2, "Succession", line = 0.3, cex = 1)
+  mtext(side = 2, "Colonisation", line = 0.3, cex = 1)
 
   #Disturbance
   b = 3.1

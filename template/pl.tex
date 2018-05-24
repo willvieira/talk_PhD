@@ -41,12 +41,34 @@
 \usetikzlibrary{shadows}
 \usetikzlibrary{shadings}
 \usetikzlibrary{tikzmark, positioning, calc} % calc, to calculate coordinate
-\tikzstyle{State}=[circle,
+\definecolor{cR}{RGB}{0, 0, 0}
+\definecolor{cT}{RGB}{253, 161, 37}
+\definecolor{cM}{RGB}{133, 203, 128}
+\definecolor{cB}{RGB}{29, 139, 139}
+\tikzstyle{StateR}=[circle,
 		thick,
 		minimum size = 0.8cm,
 		inner sep =5pt,
-		draw=plST,
-		fill=plST]
+		draw=cR,
+		fill=cR]
+\tikzstyle{StateT}=[circle,
+		thick,
+		minimum size = 0.8cm,
+		inner sep =5pt,
+		draw=cT,
+		fill=cT]
+\tikzstyle{StateM}=[circle,
+		thick,
+		minimum size = 0.8cm,
+		inner sep =5pt,
+		draw=cM,
+		fill=cM]
+\tikzstyle{StateB}=[circle,
+		thick,
+		minimum size = 0.8cm,
+		inner sep =5pt,
+		draw=cB,
+		fill=cB]
 % animated tikz (https://tex.stackexchange.com/a/136166)
 \tikzset{
   invisible/.style={opacity=0},
